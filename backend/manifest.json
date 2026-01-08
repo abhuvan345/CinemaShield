@@ -1,0 +1,30 @@
+{
+    "created_at": "2026-01-08T18:26:59.521656Z",
+    "theatre_id": "THEATRE_001",
+    "playback_window": {
+        "start": "2026-01-08T18:26:59.521656Z",
+        "end": "2026-01-08T20:26:59.521656Z"
+    },
+    "shards": [
+        {
+            "id": "test_clip_part000.mp4.enc",
+            "sha256": "aaff21984b287dfc85fcbd299118a2bf47261ef557117ff69d71aa215bf37ad6"
+        },
+        {
+            "id": "test_clip_part001.mp4.enc",
+            "sha256": "e05ae495868c63646f07303cce6c6c69ce9c3715f132877044273f35d075e149"
+        },
+        {
+            "id": "test_clip_part002.mp4.enc",
+            "sha256": "ffed15fc84bf4e5d4469bf4ddb189ca2334567b11e0303d0924f6924f35174a4"
+        },
+        {
+            "id": "test_clip_part003.mp4.enc",
+            "sha256": "866b34e892e2c501c324625f1378f92d8d79d3ff23246f3ad01880d0dc3f146d"
+        },
+        {
+            "id": "test_clip_part004.mp4.enc",
+            "sha256": "07f9bc993ccfacc23216a456fc311e303df4d4f16fe2a41c1c8758e0aed1f724"
+        }
+    ]
+}

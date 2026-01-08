@@ -6,6 +6,7 @@ from shard_loader import load_encrypted_shard
 from key_request import request_key
 from jit_decrypt import decrypt_shard
 from integrity_check import verify_sha256
+from playback_window import is_within_playback_window
 
 
 THEATRE_ID = "THEATRE_001"
@@ -34,6 +35,10 @@ def play_secure_tempfile():
     print(">>> Secure theatre player started")
 
     manifest = load_manifest()
+
+    if not is_within_playback_window(manifest["playback_window"]):
+        print("🚫 Playback blocked: outside authorised show time")
+        return
 
     # 1️⃣ Verify integrity first
     for shard in manifest["shards"]:

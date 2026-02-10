@@ -21,6 +21,11 @@ const copyToast = document.getElementById("copy-toast");
 const shardCount = document.getElementById("shard-count");
 const playbackWin = document.getElementById("playback-window");
 
+const uploadProgress = document.getElementById("upload-progress");
+const uploadBar = document.getElementById("upload-bar");
+const uploadPercent = document.getElementById("upload-percent");
+const theatreIdInput = document.getElementById("theatre-id");
+
 let selectedFile = null;
 
 // ── File Selection ──────────────────────
@@ -72,39 +77,56 @@ function formatSize(bytes) {
   return (bytes / 1048576).toFixed(1) + " MB";
 }
 
-// ── Upload & Pipeline ───────────────────
+// ── Upload with Progress ────────────────
 
-uploadBtn.addEventListener("click", async () => {
+uploadBtn.addEventListener("click", () => {
   if (!selectedFile) return;
 
   uploadBtn.disabled = true;
   uploadBtn.textContent = "Uploading…";
+  uploadProgress.classList.remove("hidden");
 
   const form = new FormData();
   form.append("file", selectedFile);
+  form.append("theatre_id", theatreIdInput.value.trim() || "THEATRE_001");
 
-  try {
-    const res = await fetch("/api/upload", { method: "POST", body: form });
-    const data = await res.json();
+  const xhr = new XMLHttpRequest();
+  xhr.open("POST", "/api/upload");
 
-    if (!res.ok) {
+  xhr.upload.onprogress = (e) => {
+    if (e.lengthComputable) {
+      const pct = Math.round((e.loaded / e.total) * 100);
+      uploadBar.style.width = pct + "%";
+      uploadPercent.textContent = `Uploading ${pct}%`;
+    }
+  };
+
+  xhr.onload = () => {
+    const data = JSON.parse(xhr.responseText);
+    if (xhr.status !== 200) {
       alert(data.error || "Upload failed");
       uploadBtn.disabled = false;
       uploadBtn.textContent = "Upload & Process";
+      uploadProgress.classList.add("hidden");
       return;
     }
-
-    // Hide upload section, show pipeline
+    uploadPercent.textContent = "Upload complete!";
     document.getElementById("upload-section").classList.add("hidden");
     pipelineSec.classList.remove("hidden");
-
     runPipeline(data.movie_id);
-  } catch (err) {
-    alert("Upload error: " + err.message);
+  };
+
+  xhr.onerror = () => {
+    alert("Upload error. Check your connection.");
     uploadBtn.disabled = false;
     uploadBtn.textContent = "Upload & Process";
-  }
+    uploadProgress.classList.add("hidden");
+  };
+
+  xhr.send(form);
 });
+
+// ── Pipeline with Animated Stepper ──────
 
 function runPipeline(movieId) {
   const steps = document.querySelectorAll(".stepper .step");
@@ -113,11 +135,9 @@ function runPipeline(movieId) {
   source.onmessage = (event) => {
     const msg = JSON.parse(event.data);
 
-    // Update progress bar
     progressBar.style.width = msg.progress + "%";
     statusText.textContent = msg.message;
 
-    // Update stepper dots
     const stepMap = {
       cleanup: 0,
       sharding: 1,
@@ -145,6 +165,8 @@ function runPipeline(movieId) {
         s.classList.add("done");
       });
       showKey(msg.key, msg.shards);
+      loadHistory();
+      loadAuditLog();
     }
 
     if (msg.step === "error") {
@@ -168,9 +190,116 @@ function showKey(key, shards) {
   playbackWin.textContent = "3 hours from now";
 }
 
+// ── Upload Another ──────────────────────
+
+document.getElementById("new-upload-btn").addEventListener("click", () => {
+  keySec.classList.add("hidden");
+  pipelineSec.classList.add("hidden");
+  uploadProgress.classList.add("hidden");
+  uploadBar.style.width = "0%";
+  progressBar.style.width = "0%";
+  const uploadSec = document.getElementById("upload-section");
+  uploadSec.classList.remove("hidden");
+  uploadBtn.disabled = false;
+  uploadBtn.textContent = "Upload & Process";
+  clearFile();
+  document.querySelectorAll(".stepper .step").forEach(s => {
+    s.classList.remove("active", "done");
+  });
+});
+
+// ── Copy Key ────────────────────────────
+
 copyBtn.addEventListener("click", () => {
   navigator.clipboard.writeText(keyDisplay.textContent).then(() => {
     copyToast.classList.remove("hidden");
     setTimeout(() => copyToast.classList.add("hidden"), 2000);
   });
 });
+
+// ── Upload History ──────────────────────
+
+async function loadHistory() {
+  try {
+    const res = await fetch("/api/history");
+    const data = await res.json();
+
+    const list = document.getElementById("history-list");
+    const empty = document.getElementById("history-empty");
+
+    if (!data.length) {
+      list.classList.add("hidden");
+      empty.classList.remove("hidden");
+      return;
+    }
+
+    empty.classList.add("hidden");
+    list.classList.remove("hidden");
+    list.innerHTML = data.map(h => `
+      <div class="history-item">
+        <div>
+          <span class="h-name">🎬 ${h.name}</span>
+          <span class="h-meta"> — ${h.shards} shards — ${h.theatre_id}</span>
+        </div>
+        <span class="h-key" title="Click to copy key" onclick="navigator.clipboard.writeText('${h.key}')">${h.key}</span>
+      </div>
+    `).join("");
+  } catch {
+    // silently ignore
+  }
+}
+
+// ── Audit Log ───────────────────────────
+
+async function loadAuditLog() {
+  try {
+    const res = await fetch("/api/audit-log");
+    const data = await res.json();
+
+    const list = document.getElementById("audit-list");
+    const empty = document.getElementById("audit-empty");
+
+    if (!data.length) {
+      list.classList.add("hidden");
+      empty.classList.remove("hidden");
+      return;
+    }
+
+    empty.classList.add("hidden");
+    list.classList.remove("hidden");
+
+    list.innerHTML = data.slice(0, 100).map(e => {
+      const t = new Date(e.timestamp);
+      const time = t.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
+      const cls = getAuditClass(e.action);
+      const detail = e.details ? Object.entries(e.details).map(([k,v]) => `${k}: ${v}`).join(" | ") : "";
+      return `
+        <div class="audit-entry">
+          <span class="audit-time">${time}</span>
+          <span class="audit-action ${cls}">${e.action}</span>
+          <span class="audit-detail">${detail}</span>
+        </div>
+      `;
+    }).join("");
+  } catch {
+    // silently ignore
+  }
+}
+
+function getAuditClass(action) {
+  if (action.includes("UPLOAD")) return "upload";
+  if (action.includes("ENCRYPT")) return "encrypt";
+  if (action.includes("SHARD")) return "shard";
+  if (action.includes("MANIFEST")) return "manifest";
+  if (action.includes("PIPELINE")) return "pipeline";
+  if (action.includes("PLAYBACK") && !action.includes("FAIL")) return "playback";
+  if (action.includes("FAIL") || action.includes("EXPIRED")) return "failed";
+  return "";
+}
+
+document.getElementById("refresh-audit").addEventListener("click", loadAuditLog);
+
+// ── Init ────────────────────────────────
+
+loadHistory();
+loadAuditLog();

@@ -8,6 +8,15 @@
 <!-- ── Upload ────────────────────────── -->
 <div id="upload-section" class="card">
   <h2>Upload Movie</h2>
+
+  <!-- Theatre ID -->
+  <div class="form-group">
+    <label for="theatre-id">Target Theatre ID</label>
+    <input type="text" id="theatre-id" placeholder="e.g. THEATRE_001"
+           value="THEATRE_001" spellcheck="false" class="input-theatre">
+    <span class="text-muted" style="margin-top:.3rem;display:block">Assign this movie to a specific theatre.</span>
+  </div>
+
   <div id="dropzone" class="dropzone">
     <div class="dropzone-content">
       <div class="dropzone-icon">📁</div>
@@ -23,6 +32,15 @@
     <span id="file-size"></span>
     <button id="clear-file" class="btn-icon" title="Remove">&times;</button>
   </div>
+
+  <!-- Upload progress -->
+  <div id="upload-progress" class="hidden" style="margin-top:1rem">
+    <div class="progress-bar-wrap">
+      <div id="upload-bar" class="progress-bar progress-bar-upload" style="width:0%"></div>
+    </div>
+    <p id="upload-percent" class="text-muted" style="text-align:center;font-size:.85rem">Uploading 0%</p>
+  </div>
+
   <button id="upload-btn" class="btn btn-primary hidden">
     Upload &amp; Process
   </button>
@@ -32,23 +50,27 @@
 <div id="pipeline-section" class="card hidden">
   <h2>Processing Pipeline</h2>
   <div class="progress-bar-wrap">
-    <div id="progress-bar" class="progress-bar" style="width: 0%"></div>
+    <div id="progress-bar" class="progress-bar" style="width:0%"></div>
   </div>
   <div class="stepper">
     <div class="step" data-step="cleanup">
       <div class="step-dot"></div>
+      <div class="step-line"></div>
       <span>Prepare</span>
     </div>
     <div class="step" data-step="sharding">
       <div class="step-dot"></div>
+      <div class="step-line"></div>
       <span>Shard</span>
     </div>
     <div class="step" data-step="encrypting">
       <div class="step-dot"></div>
+      <div class="step-line"></div>
       <span>Encrypt</span>
     </div>
     <div class="step" data-step="manifest">
       <div class="step-dot"></div>
+      <div class="step-line"></div>
       <span>Manifest</span>
     </div>
     <div class="step" data-step="done">
@@ -63,8 +85,7 @@
 <div id="key-section" class="card hidden">
   <h2>🔑 Decryption Key</h2>
   <p class="text-muted">
-    Share this key with the authorised theatre only. It is required for
-    playback.
+    Share this key with the authorised theatre only. It is required for playback.
   </p>
   <div class="key-box">
     <code id="key-display"></code>
@@ -75,7 +96,30 @@
     <span>🧩 Shards: <strong id="shard-count"></strong></span>
     <span>⏱ Playback window: <strong id="playback-window"></strong></span>
   </div>
+  <button id="new-upload-btn" class="btn btn-outline" style="margin-top:1rem">Upload Another Movie</button>
 </div>
+
+<!-- ── History ────────────────────────── -->
+<div id="history-section" class="card">
+  <h2>📜 Upload History</h2>
+  <div id="history-empty" class="text-muted" style="text-align:center;padding:1rem">
+    No movies processed yet.
+  </div>
+  <div id="history-list" class="history-list hidden"></div>
+</div>
+
+<!-- ── Audit Log ──────────────────────── -->
+<div class="card">
+  <div class="card-header-row">
+    <h2>🛡 Audit Log</h2>
+    <button id="refresh-audit" class="btn btn-sm btn-outline">Refresh</button>
+  </div>
+  <div id="audit-empty" class="text-muted" style="text-align:center;padding:1rem">
+    No events recorded yet.
+  </div>
+  <div id="audit-list" class="audit-list hidden"></div>
+</div>
+
 {% endblock %} {% block scripts %}
 <script src="{{ url_for('static', filename='js/producer.js') }}"></script>
 {% endblock %}

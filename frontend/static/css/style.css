@@ -580,3 +580,354 @@ video {
     align-items: flex-start;
   }
 }
+
+/* ═══════════════════════════════════════════
+   NEW FEATURES
+   ═══════════════════════════════════════════ */
+
+/* ── Form Group ───────────────────────── */
+
+.form-group {
+  margin-bottom: 1.2rem;
+}
+
+.input-theatre {
+  width: 100%;
+  padding: .65rem .9rem;
+  font-size: .9rem;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Cascadia Code', 'Fira Code', monospace;
+  outline: none;
+  transition: border-color .2s;
+  text-transform: uppercase;
+}
+.input-theatre:focus { border-color: var(--gold); }
+
+/* ── Upload Progress ──────────────────── */
+
+.progress-bar-upload {
+  background: linear-gradient(90deg, var(--primary), var(--primary-h));
+}
+
+/* ── Animated Stepper Lines ───────────── */
+
+.stepper {
+  position: relative;
+}
+
+.step {
+  position: relative;
+  z-index: 1;
+}
+
+.step-line {
+  position: absolute;
+  top: 7px;
+  left: calc(50% + 10px);
+  width: calc(100% - 12px);
+  height: 2px;
+  background: var(--border);
+  transition: background .4s;
+  z-index: 0;
+}
+
+.step.done .step-line {
+  background: var(--success);
+}
+
+.step.active .step-line {
+  background: linear-gradient(90deg, var(--gold), var(--border));
+}
+
+/* Stepper dot animations */
+.step.active .step-dot {
+  animation: pulse-dot 1s ease-in-out infinite;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(240,192,64,0.5); }
+  50% { box-shadow: 0 0 0 6px rgba(240,192,64,0); }
+}
+
+.step.done .step-dot {
+  animation: pop-in .3s ease;
+}
+
+@keyframes pop-in {
+  0% { transform: scale(0.5); }
+  60% { transform: scale(1.3); }
+  100% { transform: scale(1); }
+}
+
+/* ── Button Variants ──────────────────── */
+
+.btn-outline {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: .5rem 1rem;
+  font-size: .85rem;
+}
+.btn-outline:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+/* ── Card Header Row ──────────────────── */
+
+.card-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: .8rem;
+}
+
+/* ── History List ─────────────────────── */
+
+.history-list {
+  display: flex;
+  flex-direction: column;
+  gap: .6rem;
+}
+
+.history-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: .7rem 1rem;
+  background: var(--surface);
+  border-radius: 6px;
+  font-size: .88rem;
+  flex-wrap: wrap;
+  gap: .5rem;
+}
+
+.history-item .h-name {
+  font-weight: 600;
+  color: var(--text);
+}
+.history-item .h-meta {
+  color: var(--muted);
+  font-size: .8rem;
+}
+.history-item .h-key {
+  font-family: 'Cascadia Code', 'Fira Code', monospace;
+  font-size: .72rem;
+  color: var(--gold-dim);
+  cursor: pointer;
+  max-width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.history-item .h-key:hover {
+  color: var(--gold);
+}
+
+/* ── Audit Log ────────────────────────── */
+
+.audit-list {
+  max-height: 300px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: .4rem;
+}
+
+.audit-entry {
+  display: flex;
+  gap: .8rem;
+  padding: .5rem .7rem;
+  background: var(--surface);
+  border-radius: 4px;
+  font-size: .8rem;
+  align-items: flex-start;
+}
+
+.audit-time {
+  color: var(--muted);
+  white-space: nowrap;
+  min-width: 65px;
+}
+
+.audit-action {
+  font-weight: 600;
+  min-width: 130px;
+}
+.audit-action.upload { color: var(--primary); }
+.audit-action.encrypt { color: var(--gold); }
+.audit-action.shard { color: #a78bfa; }
+.audit-action.manifest { color: #f97316; }
+.audit-action.pipeline { color: var(--success); }
+.audit-action.playback { color: #06b6d4; }
+.audit-action.failed { color: var(--danger); }
+.audit-action.expired { color: var(--danger); }
+
+.audit-detail {
+  color: var(--muted);
+  word-break: break-all;
+}
+
+/* ── DRM / Screen Protection ──────────── */
+
+.drm-protected {
+  position: relative;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.drm-watermark {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  pointer-events: none;
+  z-index: 10;
+  background: repeating-linear-gradient(
+    -45deg,
+    transparent,
+    transparent 120px,
+    rgba(255,255,255,0.015) 120px,
+    rgba(255,255,255,0.015) 121px
+  );
+  overflow: hidden;
+}
+
+.drm-watermark::after {
+  content: attr(data-watermark);
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%) rotate(-30deg);
+  font-size: 1.6rem;
+  color: rgba(255,255,255,0.06);
+  white-space: nowrap;
+  pointer-events: none;
+  letter-spacing: 8px;
+}
+
+.drm-notice {
+  font-size: .78rem !important;
+  color: var(--muted) !important;
+  opacity: .7;
+}
+
+/* ── Player Controls Row ──────────────── */
+
+.player-controls-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* ── Time Badge ───────────────────────── */
+
+.time-badge {
+  padding: .2rem .6rem;
+  border-radius: 4px;
+  background: rgba(52,211,153,0.1);
+  border: 1px solid rgba(52,211,153,0.3);
+  font-size: .82rem;
+}
+
+.time-badge.warning {
+  background: rgba(249,115,22,0.1);
+  border-color: rgba(249,115,22,0.4);
+  color: #f97316;
+  animation: blink-badge 1s ease-in-out infinite;
+}
+
+.time-badge.danger {
+  background: rgba(255,78,106,0.1);
+  border-color: rgba(255,78,106,0.4);
+  color: var(--danger);
+  animation: blink-badge .6s ease-in-out infinite;
+}
+
+@keyframes blink-badge {
+  0%, 100% { opacity: 1; }
+  50% { opacity: .5; }
+}
+
+/* ── Fullscreen / Cinema Mode ─────────── */
+
+.cinema-mode {
+  position: fixed !important;
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index: 9999;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0;
+  padding: 0;
+  margin: 0;
+}
+
+.cinema-mode video {
+  max-height: 100vh;
+  max-width: 100vw;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.cinema-mode .drm-watermark {
+  z-index: 10000;
+}
+
+.cinema-exit {
+  position: fixed;
+  top: 1rem; right: 1rem;
+  z-index: 10001;
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.2);
+  padding: .5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: .85rem;
+  transition: background .2s;
+}
+.cinema-exit:hover { background: rgba(255,78,106,0.5); }
+
+/* ── Expired Overlay ──────────────────── */
+
+.expired-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index: 20000;
+  background: rgba(11,13,23,0.95);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(10px);
+}
+
+.expired-content {
+  text-align: center;
+  max-width: 400px;
+  padding: 2rem;
+}
+
+.expired-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.expired-content h2 {
+  color: var(--danger);
+  margin-bottom: .6rem;
+}
+
+.expired-content p {
+  color: var(--muted);
+  margin-bottom: 1.5rem;
+}
+
+/* ── Expiry Warning Banner ────────────── */
+
+#expiry-warning {
+  animation: blink-badge 1.5s ease-in-out infinite;
+}

@@ -42,23 +42,44 @@
 <div id="player-section" class="card hidden">
   <div class="player-header">
     <h2>▶ Now Playing</h2>
-    <div class="player-meta">
-      <span>🧩 <span id="info-shards"></span> shards</span>
-      <span>🏛 <span id="info-theatre"></span></span>
-      <span>⏱ <span id="info-time"></span> remaining</span>
+    <div class="player-controls-row">
+      <div class="player-meta">
+        <span>🧩 <span id="info-shards"></span> shards</span>
+        <span>🏛 <span id="info-theatre"></span></span>
+        <span id="time-badge" class="time-badge">⏱ <span id="info-time"></span></span>
+      </div>
+      <button id="fullscreen-btn" class="btn btn-sm btn-outline" title="Cinema Mode">⛶ Cinema</button>
     </div>
   </div>
-  <div class="video-container">
+
+  <!-- Expiry warning -->
+  <div id="expiry-warning" class="banner banner-warn hidden">
+    ⚠ Playback window ending soon! Video will stop automatically.
+  </div>
+
+  <div class="video-container drm-protected" id="video-container">
     <video id="video-player" controls autoplay>
       Your browser does not support HTML5 video.
     </video>
+    <!-- DRM watermark overlay -->
+    <div class="drm-watermark" id="drm-watermark"></div>
   </div>
   <div class="player-footer">
-    <p class="text-muted">
-      🔒 Decrypted in memory &mdash; no plaintext file stored on disk.
-    </p>
+    <p class="text-muted">🔒 Decrypted in memory &mdash; no plaintext file stored on disk.</p>
+    <p class="text-muted drm-notice">Screen capture &amp; right-click disabled. DRM watermark active.</p>
   </div>
 </div>
+
+<!-- ── Expired overlay ───────────────── -->
+<div id="expired-overlay" class="expired-overlay hidden">
+  <div class="expired-content">
+    <div class="expired-icon">⏱</div>
+    <h2>Playback Window Expired</h2>
+    <p>The authorised playback time has ended. Contact the producer for a new session.</p>
+    <a href="/theatre" class="btn btn-primary">Back to Theatre</a>
+  </div>
+</div>
+
 {% endblock %} {% block scripts %}
 <script src="{{ url_for('static', filename='js/theatre.js') }}"></script>
 {% endblock %}

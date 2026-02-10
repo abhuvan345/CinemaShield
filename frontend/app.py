@@ -9,6 +9,7 @@ import secrets
 import uuid
 import tempfile
 import atexit
+import logging
 from datetime import datetime, timedelta, timezone
 from flask import (
     Flask, render_template, request, jsonify,
@@ -37,6 +38,7 @@ TEMP_DIR = os.path.join(BASE_DIR, 'temp')
 ALLOWED_EXTENSIONS = {'mp4', 'mkv', 'avi', 'mov'}
 TOTAL_SHARDS = 4
 PLAYBACK_HOURS = 3
+AUDIT_LOG_PATH = os.path.join(BACKEND_DIR, 'audit_log.json')
 
 for d in [UPLOAD_DIR, SHARD_DIR, ENCRYPTED_DIR, TEMP_DIR]:
     os.makedirs(d, exist_ok=True)
@@ -46,7 +48,40 @@ atexit.register(lambda: shutil.rmtree(TEMP_DIR, ignore_errors=True))
 
 # In-memory stores
 movies = {}
-prepared_videos = {}  # token -> filepath
+prepared_videos = {}  # token -> {filepath, expires}
+upload_history = []   # list of processed movies
+
+
+# ═══════════════════════════════════════════
+# AUDIT LOG
+# ═══════════════════════════════════════════
+
+def audit_log(action, details=None):
+    """Append an entry to the audit log (JSON file + in-memory)."""
+    entry = {
+        'timestamp': datetime.now(timezone.utc).isoformat(),
+        'action': action,
+        'details': details or {},
+        'ip': request.remote_addr if request else None
+    }
+
+    # Load existing log
+    log = []
+    if os.path.exists(AUDIT_LOG_PATH):
+        try:
+            with open(AUDIT_LOG_PATH, 'r') as f:
+                log = json.load(f)
+        except (json.JSONDecodeError, IOError):
+            log = []
+
+    log.append(entry)
+
+    # Keep last 500 entries
+    log = log[-500:]
+    with open(AUDIT_LOG_PATH, 'w') as f:
+        json.dump(log, f, indent=2)
+
+    return entry
 
 
 # ═══════════════════════════════════════════
@@ -138,7 +173,7 @@ def encrypt_shards():
     return key
 
 
-def generate_manifest():
+def generate_manifest(theatre_id='THEATRE_001'):
     """Create manifest.json with SHA-256 hashes and playback window."""
     now = datetime.now(timezone.utc)
 
@@ -149,7 +184,7 @@ def generate_manifest():
 
     manifest = {
         'created_at': now.isoformat(),
-        'theatre_id': 'THEATRE_001',
+        'theatre_id': theatre_id,
         'playback_window': {
             'start': now.isoformat(),
             'end': (now + timedelta(hours=PLAYBACK_HOURS)).isoformat()
@@ -261,6 +296,10 @@ def upload():
     if file.filename == '' or not allowed_file(file.filename):
         return jsonify({'error': 'Invalid file type. Allowed: mp4, mkv, avi, mov'}), 400
 
+    theatre_id = request.form.get('theatre_id', 'THEATRE_001').strip().upper()
+    if not theatre_id:
+        theatre_id = 'THEATRE_001'
+
     filename = secure_filename(file.filename)
     movie_id = uuid.uuid4().hex[:8]
     save_path = os.path.join(UPLOAD_DIR, filename)
@@ -270,9 +309,11 @@ def upload():
         'name': filename,
         'status': 'uploaded',
         'file_path': save_path,
-        'key': None
+        'key': None,
+        'theatre_id': theatre_id
     }
 
+    audit_log('UPLOAD', {'movie_id': movie_id, 'filename': filename, 'theatre_id': theatre_id})
     return jsonify({'movie_id': movie_id, 'filename': filename})
 
 
@@ -292,17 +333,21 @@ def process_movie(movie_id):
             # Shard
             yield f"data: {json.dumps({'step': 'sharding', 'message': 'Splitting video into shards...', 'progress': 15})}\n\n"
             num_shards = shard_video(movie['file_path'])
+            audit_log('SHARD', {'movie_id': movie_id, 'shards': num_shards})
             yield f"data: {json.dumps({'step': 'sharding_done', 'message': f'Created {num_shards} shards', 'progress': 40})}\n\n"
 
             # Encrypt
             yield f"data: {json.dumps({'step': 'encrypting', 'message': 'Encrypting shards with AES...', 'progress': 55})}\n\n"
             key = encrypt_shards()
             movie['key'] = key.decode()
+            audit_log('ENCRYPT', {'movie_id': movie_id})
             yield f"data: {json.dumps({'step': 'encrypting_done', 'message': 'All shards encrypted', 'progress': 75})}\n\n"
 
             # Manifest
             yield f"data: {json.dumps({'step': 'manifest', 'message': 'Generating secure manifest...', 'progress': 85})}\n\n"
-            manifest = generate_manifest()
+            theatre_id = movie.get('theatre_id', 'THEATRE_001')
+            manifest = generate_manifest(theatre_id=theatre_id)
+            audit_log('MANIFEST', {'movie_id': movie_id, 'theatre_id': theatre_id, 'shards': len(manifest['shards'])})
             yield f"data: {json.dumps({'step': 'manifest_done', 'message': 'Manifest created with SHA-256 hashes', 'progress': 92})}\n\n"
 
             # Cleanup uploaded file
@@ -311,6 +356,17 @@ def process_movie(movie_id):
 
             movie['status'] = 'ready'
 
+            # Add to history
+            upload_history.append({
+                'movie_id': movie_id,
+                'name': movie['name'],
+                'theatre_id': theatre_id,
+                'shards': len(manifest['shards']),
+                'processed_at': datetime.now(timezone.utc).isoformat(),
+                'key': movie['key']
+            })
+
+            audit_log('PIPELINE_COMPLETE', {'movie_id': movie_id})
             yield f"data: {json.dumps({'step': 'done', 'message': 'Pipeline complete!', 'progress': 100, 'key': movie['key'], 'shards': len(manifest['shards'])})}\n\n"
 
         except Exception as e:
@@ -367,16 +423,24 @@ def authenticate():
         token = uuid.uuid4().hex
         output_path = os.path.join(TEMP_DIR, f'{token}.mp4')
         prepare_video(key, output_path)
-        prepared_videos[token] = output_path
+        prepared_videos[token] = {
+            'filepath': output_path,
+            'expires': end.isoformat()
+        }
 
         # Purge old prepared videos
         for old_token in list(prepared_videos.keys()):
             if old_token != token:
-                old_path = prepared_videos.pop(old_token, None)
-                if old_path and os.path.exists(old_path):
-                    os.remove(old_path)
+                old_info = prepared_videos.pop(old_token, None)
+                if old_info and os.path.exists(old_info['filepath']):
+                    os.remove(old_info['filepath'])
 
         time_remaining = max(0, int((end - now).total_seconds() / 60))
+
+        audit_log('PLAYBACK_AUTH', {
+            'theatre_id': manifest['theatre_id'],
+            'time_remaining_min': time_remaining
+        })
 
         return jsonify({
             'success': True,
@@ -391,6 +455,7 @@ def authenticate():
 
     except Exception as e:
         err = str(e)
+        audit_log('PLAYBACK_FAILED', {'error': err})
         if 'Fernet' in err or 'token' in err.lower() or 'padding' in err.lower():
             return jsonify({'error': 'Invalid decryption key'}), 401
         return jsonify({'error': f'Decryption failed: {err}'}), 500
@@ -399,10 +464,22 @@ def authenticate():
 @app.route('/api/stream/<token>')
 def stream_video(token):
     """Serve the prepared video with byte-range support for seeking."""
-    filepath = prepared_videos.get(token)
-    if not filepath or not os.path.exists(filepath):
+    info = prepared_videos.get(token)
+    if not info or not os.path.exists(info['filepath']):
         return 'Video not found or session expired', 404
-    return send_file(filepath, mimetype='video/mp4', conditional=True)
+
+    # Check if session expired
+    if info.get('expires'):
+        expires = parse_iso(info['expires'])
+        if datetime.now(timezone.utc) > expires:
+            # Cleanup
+            if os.path.exists(info['filepath']):
+                os.remove(info['filepath'])
+            prepared_videos.pop(token, None)
+            audit_log('STREAM_EXPIRED', {'token': token[:8]})
+            return 'Playback window expired', 403
+
+    return send_file(info['filepath'], mimetype='video/mp4', conditional=True)
 
 
 @app.route('/api/status')
@@ -431,6 +508,40 @@ def system_status():
         })
 
     return jsonify({'ready': False})
+
+
+@app.route('/api/check-expiry/<token>')
+def check_expiry(token):
+    """Check if a playback token has expired."""
+    info = prepared_videos.get(token)
+    if not info:
+        return jsonify({'expired': True, 'reason': 'Session not found'})
+
+    if info.get('expires'):
+        expires = parse_iso(info['expires'])
+        now = datetime.now(timezone.utc)
+        remaining = max(0, int((expires - now).total_seconds()))
+        if remaining == 0:
+            return jsonify({'expired': True, 'reason': 'Playback window ended'})
+        return jsonify({'expired': False, 'remaining_seconds': remaining})
+
+    return jsonify({'expired': False})
+
+
+@app.route('/api/history')
+def get_history():
+    """Return upload processing history."""
+    return jsonify(upload_history[::-1])  # newest first
+
+
+@app.route('/api/audit-log')
+def get_audit_log():
+    """Return audit trail."""
+    if not os.path.exists(AUDIT_LOG_PATH):
+        return jsonify([])
+    with open(AUDIT_LOG_PATH, 'r') as f:
+        log = json.load(f)
+    return jsonify(log[::-1])  # newest first
 
 
 # ═══════════════════════════════════════════

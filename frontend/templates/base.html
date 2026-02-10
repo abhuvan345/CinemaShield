@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %}CinemaShield{% endblock %}</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+    {% block head %}{% endblock %}
+  </head>
+  <body>
+    <nav class="navbar">
+      <a href="/" class="nav-brand">
+        <span class="brand-icon">🎬</span> CinemaShield
+      </a>
+      <div class="nav-links">
+        <a href="/producer" class="nav-link">Producer</a>
+        <a href="/theatre" class="nav-link">Theatre</a>
+      </div>
+    </nav>
+
+    <main class="container">{% block content %}{% endblock %}</main>
+
+    <footer class="footer">
+      <p>CinemaShield &mdash; Secure DRM Pipeline</p>
+    </footer>
+
+    {% block scripts %}{% endblock %}
+  </body>
+</html>

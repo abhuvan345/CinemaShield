@@ -1,0 +1,81 @@
+{% extends "base.html" %} {% block title %}Producer — CinemaShield{% endblock %}
+{% block content %}
+<section class="page-header">
+  <h1>🎥 Producer Dashboard</h1>
+  <p>Upload a movie to begin the secure distribution pipeline.</p>
+</section>
+
+<!-- ── Upload ────────────────────────── -->
+<div id="upload-section" class="card">
+  <h2>Upload Movie</h2>
+  <div id="dropzone" class="dropzone">
+    <div class="dropzone-content">
+      <div class="dropzone-icon">📁</div>
+      <p>Drag &amp; drop your video here</p>
+      <p class="text-muted">
+        or click to browse &mdash; MP4, MKV, AVI, MOV (max 500 MB)
+      </p>
+    </div>
+    <input type="file" id="file-input" accept=".mp4,.mkv,.avi,.mov" hidden />
+  </div>
+  <div id="file-info" class="file-info hidden">
+    <span id="file-name"></span>
+    <span id="file-size"></span>
+    <button id="clear-file" class="btn-icon" title="Remove">&times;</button>
+  </div>
+  <button id="upload-btn" class="btn btn-primary hidden">
+    Upload &amp; Process
+  </button>
+</div>
+
+<!-- ── Pipeline Progress ─────────────── -->
+<div id="pipeline-section" class="card hidden">
+  <h2>Processing Pipeline</h2>
+  <div class="progress-bar-wrap">
+    <div id="progress-bar" class="progress-bar" style="width: 0%"></div>
+  </div>
+  <div class="stepper">
+    <div class="step" data-step="cleanup">
+      <div class="step-dot"></div>
+      <span>Prepare</span>
+    </div>
+    <div class="step" data-step="sharding">
+      <div class="step-dot"></div>
+      <span>Shard</span>
+    </div>
+    <div class="step" data-step="encrypting">
+      <div class="step-dot"></div>
+      <span>Encrypt</span>
+    </div>
+    <div class="step" data-step="manifest">
+      <div class="step-dot"></div>
+      <span>Manifest</span>
+    </div>
+    <div class="step" data-step="done">
+      <div class="step-dot"></div>
+      <span>Ready</span>
+    </div>
+  </div>
+  <p id="pipeline-status" class="pipeline-status">Waiting...</p>
+</div>
+
+<!-- ── Key Output ────────────────────── -->
+<div id="key-section" class="card hidden">
+  <h2>🔑 Decryption Key</h2>
+  <p class="text-muted">
+    Share this key with the authorised theatre only. It is required for
+    playback.
+  </p>
+  <div class="key-box">
+    <code id="key-display"></code>
+    <button id="copy-key" class="btn btn-sm">Copy</button>
+  </div>
+  <div id="copy-toast" class="toast hidden">Copied!</div>
+  <div class="key-meta">
+    <span>🧩 Shards: <strong id="shard-count"></strong></span>
+    <span>⏱ Playback window: <strong id="playback-window"></strong></span>
+  </div>
+</div>
+{% endblock %} {% block scripts %}
+<script src="{{ url_for('static', filename='js/producer.js') }}"></script>
+{% endblock %}

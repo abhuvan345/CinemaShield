@@ -1,0 +1,67 @@
+{% extends "base.html" %} {% block title %}CinemaShield — Secure Movie DRM{%
+endblock %} {% block content %}
+<section class="hero">
+  <h1 class="hero-title">Cinema<span class="gold">Shield</span></h1>
+  <p class="hero-sub">End-to-end encrypted movie distribution for theatres</p>
+  <p class="hero-desc">
+    Upload &rarr; Shard &rarr; Encrypt &rarr; Distribute &rarr; Secure Playback
+  </p>
+</section>
+
+<section class="roles">
+  <a href="/producer" class="role-card">
+    <div class="role-icon">🎥</div>
+    <h2>Producer</h2>
+    <p>
+      Upload a movie and generate encrypted shards with a unique decryption key
+      for the theatre.
+    </p>
+    <span class="role-btn">Open Dashboard &rarr;</span>
+  </a>
+
+  <a href="/theatre" class="role-card">
+    <div class="role-icon">🎭</div>
+    <h2>Theatre</h2>
+    <p>
+      Enter the decryption key to securely stream the movie within the
+      authorised playback window.
+    </p>
+    <span class="role-btn">Open Player &rarr;</span>
+  </a>
+</section>
+
+<section class="how-it-works">
+  <h2>How It Works</h2>
+  <div class="steps-grid">
+    <div class="step-card">
+      <div class="step-num">1</div>
+      <h3>Upload</h3>
+      <p>Producer uploads a movie file through the secure dashboard.</p>
+    </div>
+    <div class="step-card">
+      <div class="step-num">2</div>
+      <h3>Shard &amp; Encrypt</h3>
+      <p>
+        Video is split into segments, each encrypted with AES and hashed with
+        SHA-256.
+      </p>
+    </div>
+    <div class="step-card">
+      <div class="step-num">3</div>
+      <h3>Distribute Key</h3>
+      <p>
+        A unique Fernet key is generated. Producer shares it with the authorised
+        theatre.
+      </p>
+    </div>
+    <div class="step-card">
+      <div class="step-num">4</div>
+      <h3>Secure Playback</h3>
+      <p>
+        Theatre decrypts shards just-in-time in memory. No plaintext file ever
+        touches disk.
+      </p>
+    </div>
+  </div>
+</section>
+{% endblock %}

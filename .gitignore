@@ -1,0 +1,40 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv/
+env/
+venv/
+*.egg-info/
+
+# Encrypted shard contents (keep folder, ignore files)
+backend/encrypted_shards/*
+!backend/encrypted_shards/.gitkeep
+
+# Shard contents (keep folder, ignore files)
+backend/shards/*
+backend/encrypted_shards/*
+backend/encrypted_shards/
+!backend/shards/.gitkeep
+
+# Uploads
+backend/uploads/*
+!backend/uploads/.gitkeep
+
+# Keys — never commit secrets
+backend/secret.key
+
+# Frontend temp & generated files
+frontend/temp/
+frontend/watermarked/
+
+# IDE / Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+Thumbs.db
+.DS_Store

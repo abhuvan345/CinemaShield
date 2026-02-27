@@ -1,4 +1,6 @@
 import os
+import time
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from cryptography.fernet import Fernet
 
 # -----------------------------
@@ -6,13 +8,11 @@ from cryptography.fernet import Fernet
 # -----------------------------
 SHARDS_FOLDER = "shards"
 ENCRYPTED_FOLDER = "encrypted_shards"
+KEY_FILE = "secret.key"
 
-# Create encrypted folder if it doesn't exist
 os.makedirs(ENCRYPTED_FOLDER, exist_ok=True)
 
 # Generate a key or load from file (keep this safe!)
-KEY_FILE = "secret.key"
-
 if os.path.exists(KEY_FILE):
     with open(KEY_FILE, "rb") as f:
         key = f.read()
@@ -23,34 +23,42 @@ else:
 
 fernet = Fernet(key)
 
+
+def _encrypt_one(shard_file):
+    """Read, encrypt, write .enc, and delete the plaintext shard."""
+    shard_path = os.path.join(SHARDS_FOLDER, shard_file)
+
+    with open(shard_path, "rb") as f:
+        data = f.read()
+
+    encrypted_data = fernet.encrypt(data)
+
+    encrypted_path = os.path.join(ENCRYPTED_FOLDER, shard_file + ".enc")
+    with open(encrypted_path, "wb") as f:
+        f.write(encrypted_data)
+
+    os.remove(shard_path)
+    return shard_file
+
+
 # -----------------------------
-# ENCRYPT SHARDS
+# ENCRYPT SHARDS (PARALLEL)
 # -----------------------------
 shards = [f for f in os.listdir(SHARDS_FOLDER) if os.path.isfile(os.path.join(SHARDS_FOLDER, f))]
 
 if not shards:
     print("⚠ No shards found to encrypt!")
 else:
-    print(f"🔒 Encrypting {len(shards)} shard(s)...")
+    print(f"🔒 Encrypting {len(shards)} shard(s) in parallel...")
+    start = time.perf_counter()
 
-for shard_file in shards:
-    shard_path = os.path.join(SHARDS_FOLDER, shard_file)
-    
-    # Read plaintext shard
-    with open(shard_path, "rb") as f:
-        data = f.read()
-    
-    # Encrypt
-    encrypted_data = fernet.encrypt(data)
-    
-    # Write encrypted shard
-    encrypted_path = os.path.join(ENCRYPTED_FOLDER, shard_file + ".enc")
-    with open(encrypted_path, "wb") as f:
-        f.write(encrypted_data)
-    
-    # Delete plaintext shard
-    os.remove(shard_path)
-    print(f"✅ Encrypted and deleted: {shard_file}")
+    workers = min(len(shards), os.cpu_count() or 4)
+    with ThreadPoolExecutor(max_workers=workers) as pool:
+        futures = {pool.submit(_encrypt_one, s): s for s in shards}
+        for future in as_completed(futures):
+            name = future.result()
+            print(f"✅ Encrypted and deleted: {name}")
 
-print(f"🎉 All shards encrypted. Encrypted files stored in '{ENCRYPTED_FOLDER}'")
-print(f"🔑 Encryption key saved in '{KEY_FILE}' — keep this safe!")
+    elapsed = time.perf_counter() - start
+    print(f"🎉 All {len(shards)} shards encrypted in {elapsed:.2f}s")
+    print(f"🔑 Encryption key saved in '{KEY_FILE}' — keep this safe!")

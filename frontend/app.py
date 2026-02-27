@@ -185,7 +185,9 @@ def shard_video(file_path):
 
 
 def encrypt_shards():
-    """Encrypt all shards with Fernet. Returns the key bytes."""
+    """Encrypt all shards with Fernet in parallel. Returns the key bytes."""
+    from concurrent.futures import ThreadPoolExecutor, as_completed
+
     key = Fernet.generate_key()
     fernet = Fernet(key)
 
@@ -197,17 +199,21 @@ def encrypt_shards():
         if os.path.isfile(os.path.join(SHARD_DIR, f))
     ])
 
-    for shard_file in shards:
+    def _encrypt_one(shard_file):
         shard_path = os.path.join(SHARD_DIR, shard_file)
         with open(shard_path, 'rb') as f:
             data = f.read()
-
         encrypted = fernet.encrypt(data)
         enc_path = os.path.join(ENCRYPTED_DIR, shard_file + '.enc')
         with open(enc_path, 'wb') as f:
             f.write(encrypted)
-
         os.remove(shard_path)
+
+    workers = min(len(shards), os.cpu_count() or 4)
+    with ThreadPoolExecutor(max_workers=workers) as pool:
+        futures = {pool.submit(_encrypt_one, s): s for s in shards}
+        for future in as_completed(futures):
+            future.result()  # propagate exceptions
 
     return key
 

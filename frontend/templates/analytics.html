@@ -1,0 +1,161 @@
+{% extends "base.html" %} {% block title %}CinemaShield — AI Security
+Analytics{% endblock %} {% block content %}
+<section class="analytics-header">
+  <h1 class="page-title">🧠 AI Security Analytics</h1>
+  <p class="page-sub">
+    Real-time threat detection, anomaly analysis &amp; forensic intelligence
+  </p>
+  <button id="refresh-btn" class="btn btn-outline" onclick="loadAll()">
+    🔄 Refresh
+  </button>
+</section>
+
+<!-- ── Overview Cards ──────────────────── -->
+<section class="ai-overview">
+  <div class="ai-card ai-card-total">
+    <div class="ai-card-icon">📊</div>
+    <div class="ai-card-body">
+      <div class="ai-card-value" id="total-events">—</div>
+      <div class="ai-card-label">Total Events</div>
+    </div>
+  </div>
+  <div class="ai-card ai-card-recent">
+    <div class="ai-card-icon">⏱️</div>
+    <div class="ai-card-body">
+      <div class="ai-card-value" id="recent-events">—</div>
+      <div class="ai-card-label">Last 24 Hours</div>
+    </div>
+  </div>
+  <div class="ai-card ai-card-risk">
+    <div class="ai-card-icon">🛡️</div>
+    <div class="ai-card-body">
+      <div class="ai-card-value" id="risk-level">—</div>
+      <div class="ai-card-label">Threat Level</div>
+    </div>
+  </div>
+  <div class="ai-card ai-card-ips">
+    <div class="ai-card-icon">🌐</div>
+    <div class="ai-card-body">
+      <div class="ai-card-value" id="unique-ips">—</div>
+      <div class="ai-card-label">Unique IPs</div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Threat Detection ────────────────── -->
+<section class="ai-section">
+  <h2 class="ai-section-title">🔍 Threat Detection</h2>
+  <div class="ai-threat-bar">
+    <div class="threat-meter">
+      <div class="threat-fill" id="threat-fill" style="width: 0%"></div>
+    </div>
+    <span class="threat-score" id="threat-score">0 / 100</span>
+  </div>
+  <div id="anomaly-list" class="anomaly-list">
+    <p class="empty-state">No anomalies detected — system secure</p>
+  </div>
+</section>
+
+<!-- ── Auth Success Rate ───────────────── -->
+<section class="ai-section">
+  <h2 class="ai-section-title">🔑 Authentication Analytics</h2>
+  <div class="auth-stats-row">
+    <div class="auth-stat">
+      <div class="auth-stat-ring" id="auth-ring">
+        <svg viewBox="0 0 36 36" class="ring-svg">
+          <path
+            class="ring-bg"
+            d="M18 2.0845
+            a 15.9155 15.9155 0 0 1 0 31.831
+            a 15.9155 15.9155 0 0 1 0 -31.831"
+          />
+          <path
+            class="ring-fill"
+            id="ring-fill"
+            stroke-dasharray="0, 100"
+            d="M18 2.0845
+            a 15.9155 15.9155 0 0 1 0 31.831
+            a 15.9155 15.9155 0 0 1 0 -31.831"
+          />
+          <text x="18" y="20.5" class="ring-text" id="ring-text">—</text>
+        </svg>
+      </div>
+      <div class="auth-stat-label">Success Rate</div>
+    </div>
+    <div class="auth-stat-details">
+      <div class="auth-detail">
+        <span class="dot dot-success"></span> Successful:
+        <strong id="auth-success">0</strong>
+      </div>
+      <div class="auth-detail">
+        <span class="dot dot-fail"></span> Failed:
+        <strong id="auth-failed">0</strong>
+      </div>
+      <div class="auth-detail">
+        <span class="dot dot-total"></span> Total:
+        <strong id="auth-total">0</strong>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Activity Timeline (Hourly) ──────── -->
+<section class="ai-section">
+  <h2 class="ai-section-title">📈 Activity Timeline (24h)</h2>
+  <div class="timeline-chart" id="timeline-chart">
+    <!-- Bars injected by JS -->
+  </div>
+  <div class="timeline-labels" id="timeline-labels"></div>
+</section>
+
+<!-- ── Event Breakdown ─────────────────── -->
+<section class="ai-section">
+  <h2 class="ai-section-title">📋 Event Breakdown</h2>
+  <div class="event-breakdown" id="event-breakdown">
+    <p class="empty-state">No events recorded yet</p>
+  </div>
+</section>
+
+<!-- ── Forensic Fingerprint Generator ──── -->
+<section class="ai-section">
+  <h2 class="ai-section-title">🧬 Forensic Fingerprint Generator</h2>
+  <div class="fingerprint-form">
+    <input
+      type="text"
+      id="fp-theatre"
+      class="input"
+      placeholder="Theatre ID (e.g. THEATRE_001)"
+    />
+    <input
+      type="text"
+      id="fp-token"
+      class="input"
+      placeholder="Session Token"
+    />
+    <button class="btn btn-gold" onclick="generateFingerprint()">
+      Generate Fingerprint
+    </button>
+  </div>
+  <div id="fingerprint-result" class="fingerprint-result" style="display: none">
+    <div class="fp-row">
+      <span class="fp-label">Full Hash</span
+      ><code id="fp-hash" class="fp-value"></code>
+    </div>
+    <div class="fp-row">
+      <span class="fp-label">Short ID</span
+      ><code id="fp-short" class="fp-value"></code>
+    </div>
+    <div class="fp-row">
+      <span class="fp-label">Traceable</span
+      ><span id="fp-trace" class="fp-value"></span>
+    </div>
+    <div class="fp-row">
+      <span class="fp-label">Generated</span
+      ><span id="fp-time" class="fp-value"></span>
+    </div>
+  </div>
+</section>
+
+{% endblock %} {% block scripts %}
+<script src="{{ url_for('static', filename='js/analytics.js') }}"></script>
+{% endblock %}

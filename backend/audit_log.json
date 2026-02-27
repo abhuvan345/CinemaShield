@@ -1,0 +1,2784 @@
+[
+  {
+    "timestamp": "2026-02-10T02:19:50.864236+00:00",
+    "action": "UPLOAD",
+    "details": {
+      "movie_id": "98ec45b5",
+      "filename": "file_example_MP4_640_3MG.mp4",
+      "theatre_id": "THEATRE_001"
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-10T02:19:52.304095+00:00",
+    "action": "SHARD",
+    "details": {
+      "movie_id": "98ec45b5",
+      "shards": 3
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-10T02:19:52.364419+00:00",
+    "action": "ENCRYPT",
+    "details": {
+      "movie_id": "98ec45b5"
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-10T02:19:52.482599+00:00",
+    "action": "MANIFEST",
+    "details": {
+      "movie_id": "98ec45b5",
+      "theatre_id": "THEATRE_001",
+      "shards": 3
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-10T02:19:52.503382+00:00",
+    "action": "PIPELINE_COMPLETE",
+    "details": {
+      "movie_id": "98ec45b5"
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-10T02:20:14.696906+00:00",
+    "action": "PLAYBACK_AUTH",
+    "details": {
+      "theatre_id": "THEATRE_001",
+      "time_remaining_min": 179
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-10T02:21:19.525967+00:00",
+    "action": "UPLOAD",
+    "details": {
+      "movie_id": "4b43be85",
+      "filename": "Anushka_Sharma_Saying__Ashte____Kannada_Video_Template.mp4",
+      "theatre_id": "THEATRE_002"
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-10T02:21:20.814356+00:00",
+    "action": "SHARD",
+    "details": {
+      "movie_id": "4b43be85",
+      "shards": 3
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-10T02:21:20.854804+00:00",
+    "action": "ENCRYPT",
+    "details": {
+      "movie_id": "4b43be85"
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-10T02:21:20.967708+00:00",
+    "action": "MANIFEST",
+    "details": {
+      "movie_id": "4b43be85",
+      "theatre_id": "THEATRE_002",
+      "shards": 3
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-10T02:21:20.986599+00:00",
+    "action": "PIPELINE_COMPLETE",
+    "details": {
+      "movie_id": "4b43be85"
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-10T02:21:42.174515+00:00",
+    "action": "PLAYBACK_AUTH",
+    "details": {
+      "theatre_id": "THEATRE_002",
+      "time_remaining_min": 179
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-10T02:24:37.684717+00:00",
+    "action": "UPLOAD",
+    "details": {
+      "movie_id": "fe02f34a",
+      "filename": "Anushka_Sharma_Saying__Ashte____Kannada_Video_Template.mp4",
+      "theatre_id": "THEATRE_001"
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-10T02:24:38.948035+00:00",
+    "action": "SHARD",
+    "details": {
+      "movie_id": "fe02f34a",
+      "shards": 3
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-10T02:24:38.983489+00:00",
+    "action": "ENCRYPT",
+    "details": {
+      "movie_id": "fe02f34a"
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-10T02:24:39.079988+00:00",
+    "action": "MANIFEST",
+    "details": {
+      "movie_id": "fe02f34a",
+      "theatre_id": "THEATRE_001",
+      "shards": 3
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-10T02:24:39.100349+00:00",
+    "action": "PIPELINE_COMPLETE",
+    "details": {
+      "movie_id": "fe02f34a"
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-10T02:24:50.649460+00:00",
+    "action": "PLAYBACK_AUTH",
+    "details": {
+      "theatre_id": "THEATRE_001",
+      "time_remaining_min": 179
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-10T02:32:17.007179+00:00",
+    "action": "UPLOAD",
+    "details": {
+      "movie_id": "c0f8c918",
+      "filename": "videoplayback.mp4",
+      "theatre_id": "THEATRE_001"
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-10T02:32:53.645164+00:00",
+    "action": "SHARD",
+    "details": {
+      "movie_id": "c0f8c918",
+      "shards": 4
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-10T02:32:53.825791+00:00",
+    "action": "ENCRYPT",
+    "details": {
+      "movie_id": "c0f8c918"
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-10T02:32:53.950441+00:00",
+    "action": "MANIFEST",
+    "details": {
+      "movie_id": "c0f8c918",
+      "theatre_id": "THEATRE_001",
+      "shards": 4
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-10T02:32:53.964502+00:00",
+    "action": "PIPELINE_COMPLETE",
+    "details": {
+      "movie_id": "c0f8c918"
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-10T02:33:13.804994+00:00",
+    "action": "PLAYBACK_AUTH",
+    "details": {
+      "theatre_id": "THEATRE_001",
+      "time_remaining_min": 179
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-10T10:16:50.709899+00:00",
+    "action": "UPLOAD",
+    "details": {
+      "movie_id": "86e9f4b5",
+      "filename": "videoplayback.mp4",
+      "theatre_id": "THEATRE_050"
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-10T10:18:29.582053+00:00",
+    "action": "SHARD",
+    "details": {
+      "movie_id": "86e9f4b5",
+      "shards": 4
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-10T10:18:30.061693+00:00",
+    "action": "ENCRYPT",
+    "details": {
+      "movie_id": "86e9f4b5"
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-10T10:18:30.363928+00:00",
+    "action": "MANIFEST",
+    "details": {
+      "movie_id": "86e9f4b5",
+      "theatre_id": "THEATRE_050",
+      "shards": 4
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-10T10:18:30.458654+00:00",
+    "action": "AI_ANALYSIS",
+    "details": {
+      "movie_id": "86e9f4b5",
+      "quality_score": 34,
+      "tags": [
+        "Low Resolution",
+        "H.264 Encoded",
+        "Stereo Audio",
+        "Clip"
+      ]
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-10T10:18:30.496711+00:00",
+    "action": "PIPELINE_COMPLETE",
+    "details": {
+      "movie_id": "86e9f4b5"
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-10T10:18:49.455932+00:00",
+    "action": "PLAYBACK_AUTH",
+    "details": {
+      "theatre_id": "THEATRE_050",
+      "time_remaining_min": 179
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-10T10:24:22.104533+00:00",
+    "action": "FORENSIC_FP",
+    "details": {
+      "fingerprint": "cffbf60f24e06195",
+      "theatre_id": "001"
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-10T17:31:28.207569+00:00",
+    "action": "UPLOAD",
+    "details": {
+      "movie_id": "6dffa2a6",
+      "filename": "file_example_MP4_640_3MG.mp4",
+      "theatre_id": "THEATRE_02"
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-10T17:31:30.478308+00:00",
+    "action": "SHARD",
+    "details": {
+      "movie_id": "6dffa2a6",
+      "shards": 3
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-10T17:31:30.581423+00:00",
+    "action": "ENCRYPT",
+    "details": {
+      "movie_id": "6dffa2a6"
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-10T17:31:30.672522+00:00",
+    "action": "MANIFEST",
+    "details": {
+      "movie_id": "6dffa2a6",
+      "theatre_id": "THEATRE_02",
+      "shards": 3
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-10T17:31:30.741810+00:00",
+    "action": "AI_ANALYSIS",
+    "details": {
+      "movie_id": "6dffa2a6",
+      "quality_score": 47,
+      "tags": [
+        "Low Resolution",
+        "H.264 Encoded",
+        "Stereo Audio",
+        "Hi-Fi Audio",
+        "Standard Quality"
+      ]
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-10T17:31:30.760596+00:00",
+    "action": "PIPELINE_COMPLETE",
+    "details": {
+      "movie_id": "6dffa2a6"
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-10T17:32:18.671336+00:00",
+    "action": "PLAYBACK_AUTH",
+    "details": {
+      "theatre_id": "THEATRE_02",
+      "time_remaining_min": 179
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-10T17:33:06.739507+00:00",
+    "action": "UPLOAD",
+    "details": {
+      "movie_id": "a71eb738",
+      "filename": "videoplayback.mp4",
+      "theatre_id": "THEATRE_001"
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-10T17:33:46.023747+00:00",
+    "action": "SHARD",
+    "details": {
+      "movie_id": "a71eb738",
+      "shards": 4
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-10T17:33:46.196657+00:00",
+    "action": "ENCRYPT",
+    "details": {
+      "movie_id": "a71eb738"
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-10T17:33:46.371814+00:00",
+    "action": "MANIFEST",
+    "details": {
+      "movie_id": "a71eb738",
+      "theatre_id": "THEATRE_001",
+      "shards": 4
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-10T17:33:46.450963+00:00",
+    "action": "AI_ANALYSIS",
+    "details": {
+      "movie_id": "a71eb738",
+      "quality_score": 34,
+      "tags": [
+        "Low Resolution",
+        "H.264 Encoded",
+        "Stereo Audio",
+        "Clip"
+      ]
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-10T17:33:46.477380+00:00",
+    "action": "PIPELINE_COMPLETE",
+    "details": {
+      "movie_id": "a71eb738"
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-10T17:34:02.245906+00:00",
+    "action": "PLAYBACK_AUTH",
+    "details": {
+      "theatre_id": "THEATRE_001",
+      "time_remaining_min": 179
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-10T17:40:13.655729+00:00",
+    "action": "FORENSIC_FP",
+    "details": {
+      "fingerprint": "2d2f9de8e3347774",
+      "theatre_id": "theater001"
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-10T17:56:49.921847+00:00",
+    "action": "UPLOAD",
+    "details": {
+      "movie_id": "e4f1d4b5",
+      "filename": "videoplayback.mp4",
+      "theatre_id": "THEATRE_001"
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-10T17:56:51.262959+00:00",
+    "action": "SHARD",
+    "details": {
+      "movie_id": "e4f1d4b5",
+      "shards": 4
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-10T17:56:51.422783+00:00",
+    "action": "ENCRYPT",
+    "details": {
+      "movie_id": "e4f1d4b5"
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-10T17:56:51.505982+00:00",
+    "action": "MANIFEST",
+    "details": {
+      "movie_id": "e4f1d4b5",
+      "theatre_id": "THEATRE_001",
+      "shards": 4
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-10T17:56:51.560832+00:00",
+    "action": "AI_ANALYSIS",
+    "details": {
+      "movie_id": "e4f1d4b5",
+      "quality_score": 34,
+      "tags": [
+        "Low Resolution",
+        "H.264 Encoded",
+        "Stereo Audio",
+        "Clip"
+      ]
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-10T17:56:51.610203+00:00",
+    "action": "WATERMARK_SKIP",
+    "details": {
+      "movie_id": "e4f1d4b5",
+      "reason": "embed failed or file missing"
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-10T17:56:51.630956+00:00",
+    "action": "PIPELINE_COMPLETE",
+    "details": {
+      "movie_id": "e4f1d4b5"
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-10T17:57:10.311347+00:00",
+    "action": "UPLOAD",
+    "details": {
+      "movie_id": "820303b8",
+      "filename": "videoplayback.mp4",
+      "theatre_id": "THEATRE_001"
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-10T17:57:11.033002+00:00",
+    "action": "SHARD",
+    "details": {
+      "movie_id": "820303b8",
+      "shards": 4
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-10T17:57:11.153939+00:00",
+    "action": "ENCRYPT",
+    "details": {
+      "movie_id": "820303b8"
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-10T17:57:11.243220+00:00",
+    "action": "MANIFEST",
+    "details": {
+      "movie_id": "820303b8",
+      "theatre_id": "THEATRE_001",
+      "shards": 4
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-10T17:57:11.285757+00:00",
+    "action": "AI_ANALYSIS",
+    "details": {
+      "movie_id": "820303b8",
+      "quality_score": 34,
+      "tags": [
+        "Low Resolution",
+        "H.264 Encoded",
+        "Stereo Audio",
+        "Clip"
+      ]
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-10T17:57:11.345700+00:00",
+    "action": "WATERMARK_SKIP",
+    "details": {
+      "movie_id": "820303b8",
+      "reason": "embed failed or file missing"
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-10T17:57:11.366651+00:00",
+    "action": "PIPELINE_COMPLETE",
+    "details": {
+      "movie_id": "820303b8"
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-10T17:57:25.400740+00:00",
+    "action": "PLAYBACK_AUTH",
+    "details": {
+      "theatre_id": "THEATRE_001",
+      "time_remaining_min": 179
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-10T17:57:44.420698+00:00",
+    "action": "WATERMARK_VERIFY",
+    "details": {
+      "verified": false,
+      "fingerprint_id": null
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-10T17:58:02.899697+00:00",
+    "action": "PLAYBACK_AUTH",
+    "details": {
+      "theatre_id": "THEATRE_001",
+      "time_remaining_min": 179
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-10T17:58:59.274015+00:00",
+    "action": "PLAYBACK_AUTH",
+    "details": {
+      "theatre_id": "THEATRE_001",
+      "time_remaining_min": 178
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-10T17:59:56.238647+00:00",
+    "action": "WATERMARK_VERIFY",
+    "details": {
+      "verified": false,
+      "fingerprint_id": null
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T03:56:20.756670+00:00",
+    "action": "UPLOAD",
+    "details": {
+      "movie_id": "638ede22",
+      "filename": "videoplayback.mp4",
+      "theatre_id": "THEATRE_001"
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T03:57:00.065003+00:00",
+    "action": "SHARD",
+    "details": {
+      "movie_id": "638ede22",
+      "shards": 4
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T03:57:00.264503+00:00",
+    "action": "ENCRYPT",
+    "details": {
+      "movie_id": "638ede22"
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T03:57:00.359846+00:00",
+    "action": "MANIFEST",
+    "details": {
+      "movie_id": "638ede22",
+      "theatre_id": "THEATRE_001",
+      "shards": 4
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T03:57:00.407826+00:00",
+    "action": "AI_ANALYSIS",
+    "details": {
+      "movie_id": "638ede22",
+      "quality_score": 34,
+      "tags": [
+        "Low Resolution",
+        "H.264 Encoded",
+        "Stereo Audio",
+        "Clip"
+      ]
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T03:57:00.423659+00:00",
+    "action": "PIPELINE_COMPLETE",
+    "details": {
+      "movie_id": "638ede22"
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T03:59:26.710499+00:00",
+    "action": "PLAYBACK_AUTH",
+    "details": {
+      "theatre_id": "THEATRE_001",
+      "time_remaining_min": 177
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T04:01:08.916689+00:00",
+    "action": "UPLOAD",
+    "details": {
+      "movie_id": "d3424f52",
+      "filename": "4074364-hd_1280_720_25fps.mp4",
+      "theatre_id": "THEATRE_001"
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T04:01:11.527947+00:00",
+    "action": "SHARD",
+    "details": {
+      "movie_id": "d3424f52",
+      "shards": 4
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T04:01:11.574739+00:00",
+    "action": "ENCRYPT",
+    "details": {
+      "movie_id": "d3424f52"
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T04:01:11.694646+00:00",
+    "action": "MANIFEST",
+    "details": {
+      "movie_id": "d3424f52",
+      "theatre_id": "THEATRE_001",
+      "shards": 4
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T04:01:11.787774+00:00",
+    "action": "AI_ANALYSIS",
+    "details": {
+      "movie_id": "d3424f52",
+      "quality_score": 47,
+      "tags": [
+        "HD (720p)",
+        "H.264 Encoded",
+        "Standard Quality"
+      ]
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T04:01:11.814718+00:00",
+    "action": "PIPELINE_COMPLETE",
+    "details": {
+      "movie_id": "d3424f52"
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T04:01:46.554927+00:00",
+    "action": "PLAYBACK_AUTH",
+    "details": {
+      "theatre_id": "THEATRE_001",
+      "time_remaining_min": 179
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T04:02:23.366609+00:00",
+    "action": "UPLOAD",
+    "details": {
+      "movie_id": "484c5c27",
+      "filename": "4074364-hd_1280_720_25fps.mp4",
+      "theatre_id": "THEATRE_001"
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T04:02:25.571342+00:00",
+    "action": "SHARD",
+    "details": {
+      "movie_id": "484c5c27",
+      "shards": 4
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T04:02:25.602100+00:00",
+    "action": "ENCRYPT",
+    "details": {
+      "movie_id": "484c5c27"
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T04:02:25.699178+00:00",
+    "action": "MANIFEST",
+    "details": {
+      "movie_id": "484c5c27",
+      "theatre_id": "THEATRE_001",
+      "shards": 4
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T04:02:25.741517+00:00",
+    "action": "AI_ANALYSIS",
+    "details": {
+      "movie_id": "484c5c27",
+      "quality_score": 47,
+      "tags": [
+        "HD (720p)",
+        "H.264 Encoded",
+        "Standard Quality"
+      ]
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T04:02:25.755396+00:00",
+    "action": "PIPELINE_COMPLETE",
+    "details": {
+      "movie_id": "484c5c27"
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T04:03:07.413459+00:00",
+    "action": "PLAYBACK_AUTH",
+    "details": {
+      "theatre_id": "THEATRE_001",
+      "time_remaining_min": 179
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T04:03:39.267968+00:00",
+    "action": "UPLOAD",
+    "details": {
+      "movie_id": "bd2764c5",
+      "filename": "4074364-hd_1280_720_25fps.mp4",
+      "theatre_id": "THEATRE_001"
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T04:03:41.239576+00:00",
+    "action": "SHARD",
+    "details": {
+      "movie_id": "bd2764c5",
+      "shards": 4
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T04:03:41.309815+00:00",
+    "action": "ENCRYPT",
+    "details": {
+      "movie_id": "bd2764c5"
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T04:03:41.399364+00:00",
+    "action": "MANIFEST",
+    "details": {
+      "movie_id": "bd2764c5",
+      "theatre_id": "THEATRE_001",
+      "shards": 4
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T04:03:41.448416+00:00",
+    "action": "AI_ANALYSIS",
+    "details": {
+      "movie_id": "bd2764c5",
+      "quality_score": 47,
+      "tags": [
+        "HD (720p)",
+        "H.264 Encoded",
+        "Standard Quality"
+      ]
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T04:03:41.454930+00:00",
+    "action": "PIPELINE_COMPLETE",
+    "details": {
+      "movie_id": "bd2764c5"
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T04:04:09.815564+00:00",
+    "action": "PLAYBACK_AUTH",
+    "details": {
+      "theatre_id": "THEATRE_001",
+      "time_remaining_min": 179
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T04:04:35.856433+00:00",
+    "action": "UPLOAD",
+    "details": {
+      "movie_id": "3005b638",
+      "filename": "4074364-hd_1280_720_25fps.mp4",
+      "theatre_id": "THEATRE_001"
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T04:04:37.879001+00:00",
+    "action": "SHARD",
+    "details": {
+      "movie_id": "3005b638",
+      "shards": 4
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T04:04:37.921358+00:00",
+    "action": "ENCRYPT",
+    "details": {
+      "movie_id": "3005b638"
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T04:04:38.010657+00:00",
+    "action": "MANIFEST",
+    "details": {
+      "movie_id": "3005b638",
+      "theatre_id": "THEATRE_001",
+      "shards": 4
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T04:04:38.065831+00:00",
+    "action": "AI_ANALYSIS",
+    "details": {
+      "movie_id": "3005b638",
+      "quality_score": 47,
+      "tags": [
+        "HD (720p)",
+        "H.264 Encoded",
+        "Standard Quality"
+      ]
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T04:04:38.086000+00:00",
+    "action": "PIPELINE_COMPLETE",
+    "details": {
+      "movie_id": "3005b638"
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T04:04:55.695775+00:00",
+    "action": "PLAYBACK_AUTH",
+    "details": {
+      "theatre_id": "THEATRE_001",
+      "time_remaining_min": 179
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T04:05:37.188697+00:00",
+    "action": "UPLOAD",
+    "details": {
+      "movie_id": "8d3a6b36",
+      "filename": "4074364-hd_1280_720_25fps.mp4",
+      "theatre_id": "THEATRE_001"
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T04:05:40.383657+00:00",
+    "action": "SHARD",
+    "details": {
+      "movie_id": "8d3a6b36",
+      "shards": 4
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T04:05:40.432843+00:00",
+    "action": "ENCRYPT",
+    "details": {
+      "movie_id": "8d3a6b36"
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T04:05:40.508147+00:00",
+    "action": "MANIFEST",
+    "details": {
+      "movie_id": "8d3a6b36",
+      "theatre_id": "THEATRE_001",
+      "shards": 4
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T04:05:40.557724+00:00",
+    "action": "AI_ANALYSIS",
+    "details": {
+      "movie_id": "8d3a6b36",
+      "quality_score": 47,
+      "tags": [
+        "HD (720p)",
+        "H.264 Encoded",
+        "Standard Quality"
+      ]
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T04:05:40.579184+00:00",
+    "action": "PIPELINE_COMPLETE",
+    "details": {
+      "movie_id": "8d3a6b36"
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T04:06:13.396100+00:00",
+    "action": "PLAYBACK_AUTH",
+    "details": {
+      "theatre_id": "THEATRE_001",
+      "time_remaining_min": 179
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T04:06:52.269493+00:00",
+    "action": "FORENSIC_FP",
+    "details": {
+      "fingerprint": "69799f213b6b5e5a",
+      "theatre_id": "THEATRE_001"
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T06:09:30.837101+00:00",
+    "action": "UPLOAD",
+    "details": {
+      "movie_id": "ef8f8f27",
+      "filename": "4074364-hd_1280_720_25fps.mp4",
+      "theatre_id": "THEATRE_001"
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T06:09:32.928200+00:00",
+    "action": "SHARD",
+    "details": {
+      "movie_id": "ef8f8f27",
+      "shards": 4
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T06:09:32.969965+00:00",
+    "action": "ENCRYPT",
+    "details": {
+      "movie_id": "ef8f8f27"
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T06:09:33.066822+00:00",
+    "action": "MANIFEST",
+    "details": {
+      "movie_id": "ef8f8f27",
+      "theatre_id": "THEATRE_001",
+      "shards": 4
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T06:09:33.114920+00:00",
+    "action": "AI_ANALYSIS",
+    "details": {
+      "movie_id": "ef8f8f27",
+      "quality_score": 47,
+      "tags": [
+        "HD (720p)",
+        "H.264 Encoded",
+        "Standard Quality"
+      ]
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T06:09:33.129546+00:00",
+    "action": "PIPELINE_COMPLETE",
+    "details": {
+      "movie_id": "ef8f8f27"
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T06:13:52.971066+00:00",
+    "action": "UPLOAD",
+    "details": {
+      "movie_id": "99d8d818",
+      "filename": "4074364-hd_1280_720_25fps.mp4",
+      "theatre_id": "THEATRE_001"
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T06:13:54.866752+00:00",
+    "action": "SHARD",
+    "details": {
+      "movie_id": "99d8d818",
+      "shards": 4
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T06:13:54.900608+00:00",
+    "action": "ENCRYPT",
+    "details": {
+      "movie_id": "99d8d818"
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T06:13:55.011810+00:00",
+    "action": "MANIFEST",
+    "details": {
+      "movie_id": "99d8d818",
+      "theatre_id": "THEATRE_001",
+      "shards": 4
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T06:13:55.060227+00:00",
+    "action": "AI_ANALYSIS",
+    "details": {
+      "movie_id": "99d8d818",
+      "quality_score": 47,
+      "tags": [
+        "HD (720p)",
+        "H.264 Encoded",
+        "Standard Quality"
+      ]
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T06:13:55.074188+00:00",
+    "action": "PIPELINE_COMPLETE",
+    "details": {
+      "movie_id": "99d8d818"
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T06:14:40.677900+00:00",
+    "action": "PLAYBACK_AUTH",
+    "details": {
+      "theatre_id": "THEATRE_001",
+      "time_remaining_min": 179
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T06:17:49.011358+00:00",
+    "action": "UPLOAD",
+    "details": {
+      "movie_id": "ae6e6f9d",
+      "filename": "videoplayback.mp4",
+      "theatre_id": "THEATRE_001"
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T06:19:01.921519+00:00",
+    "action": "UPLOAD",
+    "details": {
+      "movie_id": "38026052",
+      "filename": "videoplayback.mp4",
+      "theatre_id": "THEATRE_001"
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T06:19:44.150475+00:00",
+    "action": "UPLOAD",
+    "details": {
+      "movie_id": "3c4df930",
+      "filename": "4074364-hd_1280_720_25fps.mp4",
+      "theatre_id": "THEATRE_001"
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T06:21:06.258617+00:00",
+    "action": "UPLOAD",
+    "details": {
+      "movie_id": "dd8f307b",
+      "filename": "4074364-hd_1280_720_25fps.mp4",
+      "theatre_id": "THEATRE_001"
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T06:21:11.595104+00:00",
+    "action": "SHARD",
+    "details": {
+      "movie_id": "dd8f307b",
+      "shards": 4
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T06:21:11.716302+00:00",
+    "action": "ENCRYPT",
+    "details": {
+      "movie_id": "dd8f307b"
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T06:21:11.976874+00:00",
+    "action": "MANIFEST",
+    "details": {
+      "movie_id": "dd8f307b",
+      "theatre_id": "THEATRE_001",
+      "shards": 4
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T06:21:12.179501+00:00",
+    "action": "AI_ANALYSIS",
+    "details": {
+      "movie_id": "dd8f307b",
+      "quality_score": 47,
+      "tags": [
+        "HD (720p)",
+        "H.264 Encoded",
+        "Standard Quality"
+      ]
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T06:21:12.244013+00:00",
+    "action": "PIPELINE_COMPLETE",
+    "details": {
+      "movie_id": "dd8f307b"
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T06:34:02.766737+00:00",
+    "action": "UPLOAD",
+    "details": {
+      "movie_id": "d7ee2947",
+      "filename": "4074364-hd_1280_720_25fps.mp4",
+      "theatre_id": "THEATRE_001"
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T06:34:08.112560+00:00",
+    "action": "SHARD",
+    "details": {
+      "movie_id": "d7ee2947",
+      "shards": 4
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T06:34:08.219122+00:00",
+    "action": "ENCRYPT",
+    "details": {
+      "movie_id": "d7ee2947"
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T06:34:08.452718+00:00",
+    "action": "MANIFEST",
+    "details": {
+      "movie_id": "d7ee2947",
+      "theatre_id": "THEATRE_001",
+      "shards": 4
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T06:34:08.651978+00:00",
+    "action": "AI_ANALYSIS",
+    "details": {
+      "movie_id": "d7ee2947",
+      "quality_score": 47,
+      "tags": [
+        "HD (720p)",
+        "H.264 Encoded",
+        "Standard Quality"
+      ]
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T06:34:08.717648+00:00",
+    "action": "PIPELINE_COMPLETE",
+    "details": {
+      "movie_id": "d7ee2947"
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T06:34:32.827501+00:00",
+    "action": "PLAYBACK_AUTH",
+    "details": {
+      "theatre_id": "THEATRE_001",
+      "time_remaining_min": 179
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T06:35:31.176763+00:00",
+    "action": "UPLOAD",
+    "details": {
+      "movie_id": "22ea91c6",
+      "filename": "4074364-hd_1280_720_25fps.mp4",
+      "theatre_id": "THEATRE_001"
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T06:35:36.510126+00:00",
+    "action": "SHARD",
+    "details": {
+      "movie_id": "22ea91c6",
+      "shards": 4
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T06:35:36.636668+00:00",
+    "action": "ENCRYPT",
+    "details": {
+      "movie_id": "22ea91c6"
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T06:35:36.941789+00:00",
+    "action": "MANIFEST",
+    "details": {
+      "movie_id": "22ea91c6",
+      "theatre_id": "THEATRE_001",
+      "shards": 4
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T06:35:37.147314+00:00",
+    "action": "AI_ANALYSIS",
+    "details": {
+      "movie_id": "22ea91c6",
+      "quality_score": 47,
+      "tags": [
+        "HD (720p)",
+        "H.264 Encoded",
+        "Standard Quality"
+      ]
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T06:35:37.224508+00:00",
+    "action": "PIPELINE_COMPLETE",
+    "details": {
+      "movie_id": "22ea91c6"
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T06:37:35.746268+00:00",
+    "action": "PLAYBACK_AUTH",
+    "details": {
+      "theatre_id": "THEATRE_001",
+      "time_remaining_min": 178
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T06:57:06.142262+00:00",
+    "action": "FORENSIC_FP",
+    "details": {
+      "fingerprint": "996b26bb737227a6",
+      "theatre_id": "01"
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T07:32:55.875259+00:00",
+    "action": "UPLOAD",
+    "details": {
+      "movie_id": "3da7a8bf",
+      "filename": "4074364-hd_1280_720_25fps.mp4",
+      "theatre_id": "THEATRE_001"
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T07:32:58.520912+00:00",
+    "action": "SHARD",
+    "details": {
+      "movie_id": "3da7a8bf",
+      "shards": 4
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T07:32:58.590119+00:00",
+    "action": "ENCRYPT",
+    "details": {
+      "movie_id": "3da7a8bf"
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T07:32:58.701421+00:00",
+    "action": "MANIFEST",
+    "details": {
+      "movie_id": "3da7a8bf",
+      "theatre_id": "THEATRE_001",
+      "shards": 4
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T07:32:58.764483+00:00",
+    "action": "AI_ANALYSIS",
+    "details": {
+      "movie_id": "3da7a8bf",
+      "quality_score": 47,
+      "tags": [
+        "HD (720p)",
+        "H.264 Encoded",
+        "Standard Quality"
+      ]
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T07:32:58.791343+00:00",
+    "action": "PIPELINE_COMPLETE",
+    "details": {
+      "movie_id": "3da7a8bf"
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T07:33:25.916269+00:00",
+    "action": "PLAYBACK_AUTH",
+    "details": {
+      "theatre_id": "THEATRE_001",
+      "time_remaining_min": 179
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T07:38:20.214256+00:00",
+    "action": "UPLOAD",
+    "details": {
+      "movie_id": "56839772",
+      "filename": "videoplayback.mp4",
+      "theatre_id": "THEATRE_001"
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T07:38:55.505641+00:00",
+    "action": "SHARD",
+    "details": {
+      "movie_id": "56839772",
+      "shards": 4
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T07:38:55.679899+00:00",
+    "action": "ENCRYPT",
+    "details": {
+      "movie_id": "56839772"
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T07:38:55.783614+00:00",
+    "action": "MANIFEST",
+    "details": {
+      "movie_id": "56839772",
+      "theatre_id": "THEATRE_001",
+      "shards": 4
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T07:38:55.832173+00:00",
+    "action": "AI_ANALYSIS",
+    "details": {
+      "movie_id": "56839772",
+      "quality_score": 34,
+      "tags": [
+        "Low Resolution",
+        "H.264 Encoded",
+        "Stereo Audio",
+        "Clip"
+      ]
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T07:38:55.852913+00:00",
+    "action": "PIPELINE_COMPLETE",
+    "details": {
+      "movie_id": "56839772"
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T07:39:30.066940+00:00",
+    "action": "PLAYBACK_FAILED",
+    "details": {
+      "error": "Fernet key must be 32 url-safe base64-encoded bytes."
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T07:40:19.261145+00:00",
+    "action": "UPLOAD",
+    "details": {
+      "movie_id": "0376d871",
+      "filename": "4074364-hd_1280_720_25fps.mp4",
+      "theatre_id": "THEATRE_001"
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T07:40:21.100878+00:00",
+    "action": "SHARD",
+    "details": {
+      "movie_id": "0376d871",
+      "shards": 4
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T07:40:21.142044+00:00",
+    "action": "ENCRYPT",
+    "details": {
+      "movie_id": "0376d871"
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T07:40:21.253603+00:00",
+    "action": "MANIFEST",
+    "details": {
+      "movie_id": "0376d871",
+      "theatre_id": "THEATRE_001",
+      "shards": 4
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T07:40:21.295186+00:00",
+    "action": "AI_ANALYSIS",
+    "details": {
+      "movie_id": "0376d871",
+      "quality_score": 47,
+      "tags": [
+        "HD (720p)",
+        "H.264 Encoded",
+        "Standard Quality"
+      ]
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T07:40:21.309139+00:00",
+    "action": "PIPELINE_COMPLETE",
+    "details": {
+      "movie_id": "0376d871"
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T09:10:52.738658+00:00",
+    "action": "UPLOAD",
+    "details": {
+      "movie_id": "3422f156",
+      "filename": "4074364-hd_1280_720_25fps.mp4",
+      "theatre_id": "THEATRE_001"
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T09:10:56.372876+00:00",
+    "action": "SHARD",
+    "details": {
+      "movie_id": "3422f156",
+      "shards": 4
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T09:10:56.458967+00:00",
+    "action": "ENCRYPT",
+    "details": {
+      "movie_id": "3422f156"
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T09:10:56.570660+00:00",
+    "action": "MANIFEST",
+    "details": {
+      "movie_id": "3422f156",
+      "theatre_id": "THEATRE_001",
+      "shards": 4
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T09:10:56.648469+00:00",
+    "action": "AI_ANALYSIS",
+    "details": {
+      "movie_id": "3422f156",
+      "quality_score": 47,
+      "tags": [
+        "HD (720p)",
+        "H.264 Encoded",
+        "Standard Quality"
+      ]
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T09:10:56.676249+00:00",
+    "action": "PIPELINE_COMPLETE",
+    "details": {
+      "movie_id": "3422f156"
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T09:11:24.876509+00:00",
+    "action": "UPLOAD",
+    "details": {
+      "movie_id": "937277e0",
+      "filename": "4074364-hd_1280_720_25fps.mp4",
+      "theatre_id": "THEATRE_001"
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T09:11:29.931859+00:00",
+    "action": "SHARD",
+    "details": {
+      "movie_id": "937277e0",
+      "shards": 4
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T09:11:30.064619+00:00",
+    "action": "ENCRYPT",
+    "details": {
+      "movie_id": "937277e0"
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T09:11:30.321488+00:00",
+    "action": "MANIFEST",
+    "details": {
+      "movie_id": "937277e0",
+      "theatre_id": "THEATRE_001",
+      "shards": 4
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T09:11:30.536688+00:00",
+    "action": "AI_ANALYSIS",
+    "details": {
+      "movie_id": "937277e0",
+      "quality_score": 47,
+      "tags": [
+        "HD (720p)",
+        "H.264 Encoded",
+        "Standard Quality"
+      ]
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T09:11:30.599829+00:00",
+    "action": "PIPELINE_COMPLETE",
+    "details": {
+      "movie_id": "937277e0"
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T09:12:01.875371+00:00",
+    "action": "PLAYBACK_AUTH",
+    "details": {
+      "theatre_id": "THEATRE_001",
+      "time_remaining_min": 179
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T09:14:05.126872+00:00",
+    "action": "UPLOAD",
+    "details": {
+      "movie_id": "54befa8a",
+      "filename": "4074364-hd_1280_720_25fps.mp4",
+      "theatre_id": "THEATRE_001"
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T09:14:10.088411+00:00",
+    "action": "SHARD",
+    "details": {
+      "movie_id": "54befa8a",
+      "shards": 4
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T09:14:10.220527+00:00",
+    "action": "ENCRYPT",
+    "details": {
+      "movie_id": "54befa8a"
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T09:14:10.491457+00:00",
+    "action": "MANIFEST",
+    "details": {
+      "movie_id": "54befa8a",
+      "theatre_id": "THEATRE_001",
+      "shards": 4
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T09:14:10.664816+00:00",
+    "action": "AI_ANALYSIS",
+    "details": {
+      "movie_id": "54befa8a",
+      "quality_score": 47,
+      "tags": [
+        "HD (720p)",
+        "H.264 Encoded",
+        "Standard Quality"
+      ]
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T09:14:10.716385+00:00",
+    "action": "PIPELINE_COMPLETE",
+    "details": {
+      "movie_id": "54befa8a"
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T09:15:54.031810+00:00",
+    "action": "PLAYBACK_AUTH",
+    "details": {
+      "theatre_id": "THEATRE_001",
+      "time_remaining_min": 178
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T09:17:06.916802+00:00",
+    "action": "UPLOAD",
+    "details": {
+      "movie_id": "ac8e55a4",
+      "filename": "4074364-hd_1280_720_25fps.mp4",
+      "theatre_id": "THEATRE_001"
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T09:17:12.014945+00:00",
+    "action": "SHARD",
+    "details": {
+      "movie_id": "ac8e55a4",
+      "shards": 4
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T09:17:12.146179+00:00",
+    "action": "ENCRYPT",
+    "details": {
+      "movie_id": "ac8e55a4"
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T09:17:12.424470+00:00",
+    "action": "MANIFEST",
+    "details": {
+      "movie_id": "ac8e55a4",
+      "theatre_id": "THEATRE_001",
+      "shards": 4
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T09:17:12.597103+00:00",
+    "action": "AI_ANALYSIS",
+    "details": {
+      "movie_id": "ac8e55a4",
+      "quality_score": 47,
+      "tags": [
+        "HD (720p)",
+        "H.264 Encoded",
+        "Standard Quality"
+      ]
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T09:17:12.653314+00:00",
+    "action": "PIPELINE_COMPLETE",
+    "details": {
+      "movie_id": "ac8e55a4"
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T09:17:45.225938+00:00",
+    "action": "PLAYBACK_AUTH",
+    "details": {
+      "theatre_id": "THEATRE_001",
+      "time_remaining_min": 179
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T09:52:35.932414+00:00",
+    "action": "UPLOAD",
+    "details": {
+      "movie_id": "1dd3c94d",
+      "filename": "4074364-hd_1280_720_25fps.mp4",
+      "theatre_id": "THEATRE_001"
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T09:52:37.828205+00:00",
+    "action": "SHARD",
+    "details": {
+      "movie_id": "1dd3c94d",
+      "shards": 4
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T09:52:37.869772+00:00",
+    "action": "ENCRYPT",
+    "details": {
+      "movie_id": "1dd3c94d"
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T09:52:37.946656+00:00",
+    "action": "MANIFEST",
+    "details": {
+      "movie_id": "1dd3c94d",
+      "theatre_id": "THEATRE_001",
+      "shards": 4
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T09:52:38.009399+00:00",
+    "action": "AI_ANALYSIS",
+    "details": {
+      "movie_id": "1dd3c94d",
+      "quality_score": 47,
+      "tags": [
+        "HD (720p)",
+        "H.264 Encoded",
+        "Standard Quality"
+      ]
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T09:52:38.030031+00:00",
+    "action": "PIPELINE_COMPLETE",
+    "details": {
+      "movie_id": "1dd3c94d"
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T10:11:06.800211+00:00",
+    "action": "UPLOAD",
+    "details": {
+      "movie_id": "e0523a96",
+      "filename": "4074364-hd_1280_720_25fps.mp4",
+      "theatre_id": "THEATRE_001"
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T10:11:08.698255+00:00",
+    "action": "SHARD",
+    "details": {
+      "movie_id": "e0523a96",
+      "shards": 4
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T10:11:08.761308+00:00",
+    "action": "ENCRYPT",
+    "details": {
+      "movie_id": "e0523a96"
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T10:11:08.836624+00:00",
+    "action": "MANIFEST",
+    "details": {
+      "movie_id": "e0523a96",
+      "theatre_id": "THEATRE_001",
+      "shards": 4
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T10:11:08.893121+00:00",
+    "action": "AI_ANALYSIS",
+    "details": {
+      "movie_id": "e0523a96",
+      "quality_score": 47,
+      "tags": [
+        "HD (720p)",
+        "H.264 Encoded",
+        "Standard Quality"
+      ]
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T10:11:08.913930+00:00",
+    "action": "PIPELINE_COMPLETE",
+    "details": {
+      "movie_id": "e0523a96"
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T10:12:08.432111+00:00",
+    "action": "PLAYBACK_AUTH",
+    "details": {
+      "theatre_id": "THEATRE_001",
+      "time_remaining_min": 179
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T10:29:09.948332+00:00",
+    "action": "UPLOAD",
+    "details": {
+      "movie_id": "829e5cc4",
+      "filename": "4074364-hd_1280_720_25fps.mp4",
+      "theatre_id": "THEATRE_001"
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T10:29:11.838177+00:00",
+    "action": "SHARD",
+    "details": {
+      "movie_id": "829e5cc4",
+      "shards": 4
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T10:29:11.873915+00:00",
+    "action": "ENCRYPT",
+    "details": {
+      "movie_id": "829e5cc4"
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T10:29:11.943069+00:00",
+    "action": "MANIFEST",
+    "details": {
+      "movie_id": "829e5cc4",
+      "theatre_id": "THEATRE_001",
+      "shards": 4
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T10:29:11.992102+00:00",
+    "action": "AI_ANALYSIS",
+    "details": {
+      "movie_id": "829e5cc4",
+      "quality_score": 47,
+      "tags": [
+        "HD (720p)",
+        "H.264 Encoded",
+        "Standard Quality"
+      ]
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T10:29:12.010825+00:00",
+    "action": "PIPELINE_COMPLETE",
+    "details": {
+      "movie_id": "829e5cc4"
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T10:30:17.189844+00:00",
+    "action": "PLAYBACK_AUTH",
+    "details": {
+      "theatre_id": "THEATRE_001",
+      "time_remaining_min": 178
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T11:45:10.551138+00:00",
+    "action": "UPLOAD",
+    "details": {
+      "movie_id": "fbc88f45",
+      "filename": "4074364-hd_1280_720_25fps.mp4",
+      "theatre_id": "THEATRE_001"
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T11:45:12.538317+00:00",
+    "action": "SHARD",
+    "details": {
+      "movie_id": "fbc88f45",
+      "shards": 4
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T11:45:12.586990+00:00",
+    "action": "ENCRYPT",
+    "details": {
+      "movie_id": "fbc88f45"
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T11:45:12.695617+00:00",
+    "action": "MANIFEST",
+    "details": {
+      "movie_id": "fbc88f45",
+      "theatre_id": "THEATRE_001",
+      "shards": 4
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T11:45:12.750972+00:00",
+    "action": "AI_ANALYSIS",
+    "details": {
+      "movie_id": "fbc88f45",
+      "quality_score": 47,
+      "tags": [
+        "HD (720p)",
+        "H.264 Encoded",
+        "Standard Quality"
+      ]
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T11:45:12.764913+00:00",
+    "action": "PIPELINE_COMPLETE",
+    "details": {
+      "movie_id": "fbc88f45"
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T11:47:32.838445+00:00",
+    "action": "PLAYBACK_AUTH",
+    "details": {
+      "theatre_id": "THEATRE_001",
+      "time_remaining_min": 177
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T11:54:01.076622+00:00",
+    "action": "UPLOAD",
+    "details": {
+      "movie_id": "c334cb4e",
+      "filename": "4074364-hd_1280_720_25fps.mp4",
+      "theatre_id": "THEATRE_001"
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T11:54:02.965008+00:00",
+    "action": "SHARD",
+    "details": {
+      "movie_id": "c334cb4e",
+      "shards": 4
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T11:54:03.013964+00:00",
+    "action": "ENCRYPT",
+    "details": {
+      "movie_id": "c334cb4e"
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T11:54:03.097186+00:00",
+    "action": "MANIFEST",
+    "details": {
+      "movie_id": "c334cb4e",
+      "theatre_id": "THEATRE_001",
+      "shards": 4
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T11:54:03.152486+00:00",
+    "action": "AI_ANALYSIS",
+    "details": {
+      "movie_id": "c334cb4e",
+      "quality_score": 47,
+      "tags": [
+        "HD (720p)",
+        "H.264 Encoded",
+        "Standard Quality"
+      ]
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T11:54:03.173551+00:00",
+    "action": "PIPELINE_COMPLETE",
+    "details": {
+      "movie_id": "c334cb4e"
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T17:12:59.329972+00:00",
+    "action": "UPLOAD",
+    "details": {
+      "movie_id": "1aad9e35",
+      "filename": "4074364-hd_1280_720_25fps.mp4",
+      "theatre_id": "THEATRE_001"
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T17:13:07.542026+00:00",
+    "action": "SHARD",
+    "details": {
+      "movie_id": "1aad9e35",
+      "shards": 4
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T17:13:07.732651+00:00",
+    "action": "ENCRYPT",
+    "details": {
+      "movie_id": "1aad9e35"
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T17:13:08.016454+00:00",
+    "action": "MANIFEST",
+    "details": {
+      "movie_id": "1aad9e35",
+      "theatre_id": "THEATRE_001",
+      "shards": 4
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T17:13:08.244457+00:00",
+    "action": "AI_ANALYSIS",
+    "details": {
+      "movie_id": "1aad9e35",
+      "quality_score": 47,
+      "tags": [
+        "HD (720p)",
+        "H.264 Encoded",
+        "Standard Quality"
+      ]
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T17:13:08.304738+00:00",
+    "action": "PIPELINE_COMPLETE",
+    "details": {
+      "movie_id": "1aad9e35"
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T17:15:01.158760+00:00",
+    "action": "PLAYBACK_AUTH",
+    "details": {
+      "theatre_id": "THEATRE_001",
+      "time_remaining_min": 178
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T17:16:38.764251+00:00",
+    "action": "FORENSIC_FP",
+    "details": {
+      "fingerprint": "fb6a6d92672d2060",
+      "theatre_id": "001"
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T17:18:49.187438+00:00",
+    "action": "PLAYBACK_AUTH",
+    "details": {
+      "theatre_id": "THEATRE_001",
+      "time_remaining_min": 174
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T17:19:17.940861+00:00",
+    "action": "UPLOAD",
+    "details": {
+      "movie_id": "39b5faeb",
+      "filename": "4074364-hd_1280_720_25fps.mp4",
+      "theatre_id": "THEATRE_001"
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T17:19:24.421142+00:00",
+    "action": "SHARD",
+    "details": {
+      "movie_id": "39b5faeb",
+      "shards": 4
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T17:19:24.539324+00:00",
+    "action": "ENCRYPT",
+    "details": {
+      "movie_id": "39b5faeb"
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T17:19:24.766870+00:00",
+    "action": "MANIFEST",
+    "details": {
+      "movie_id": "39b5faeb",
+      "theatre_id": "THEATRE_001",
+      "shards": 4
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T17:19:24.951183+00:00",
+    "action": "AI_ANALYSIS",
+    "details": {
+      "movie_id": "39b5faeb",
+      "quality_score": 47,
+      "tags": [
+        "HD (720p)",
+        "H.264 Encoded",
+        "Standard Quality"
+      ]
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T17:19:25.013261+00:00",
+    "action": "PIPELINE_COMPLETE",
+    "details": {
+      "movie_id": "39b5faeb"
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-11T17:20:13.236353+00:00",
+    "action": "FORENSIC_FP",
+    "details": {
+      "fingerprint": "405efb892b960774",
+      "theatre_id": "001"
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-12T04:15:18.442244+00:00",
+    "action": "UPLOAD",
+    "details": {
+      "movie_id": "2a0c24b5",
+      "filename": "4074364-hd_1280_720_25fps.mp4",
+      "theatre_id": "THEATRE_001"
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-12T04:15:27.302426+00:00",
+    "action": "SHARD",
+    "details": {
+      "movie_id": "2a0c24b5",
+      "shards": 4
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-12T04:15:27.412696+00:00",
+    "action": "ENCRYPT",
+    "details": {
+      "movie_id": "2a0c24b5"
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-12T04:15:27.545709+00:00",
+    "action": "MANIFEST",
+    "details": {
+      "movie_id": "2a0c24b5",
+      "theatre_id": "THEATRE_001",
+      "shards": 4
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-12T04:15:27.612610+00:00",
+    "action": "AI_ANALYSIS",
+    "details": {
+      "movie_id": "2a0c24b5",
+      "quality_score": 47,
+      "tags": [
+        "HD (720p)",
+        "H.264 Encoded",
+        "Standard Quality"
+      ]
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-12T04:15:27.644260+00:00",
+    "action": "PIPELINE_COMPLETE",
+    "details": {
+      "movie_id": "2a0c24b5"
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-12T04:16:31.075922+00:00",
+    "action": "PLAYBACK_AUTH",
+    "details": {
+      "theatre_id": "THEATRE_001",
+      "time_remaining_min": 178
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-12T04:34:05.070786+00:00",
+    "action": "UPLOAD",
+    "details": {
+      "movie_id": "f171b3c0",
+      "filename": "4074364-hd_1280_720_25fps.mp4",
+      "theatre_id": "THEATRE_001"
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-12T04:34:10.002805+00:00",
+    "action": "SHARD",
+    "details": {
+      "movie_id": "f171b3c0",
+      "shards": 4
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-12T04:34:10.052562+00:00",
+    "action": "ENCRYPT",
+    "details": {
+      "movie_id": "f171b3c0"
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-12T04:34:10.119430+00:00",
+    "action": "MANIFEST",
+    "details": {
+      "movie_id": "f171b3c0",
+      "theatre_id": "THEATRE_001",
+      "shards": 4
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-12T04:34:10.169202+00:00",
+    "action": "AI_ANALYSIS",
+    "details": {
+      "movie_id": "f171b3c0",
+      "quality_score": 47,
+      "tags": [
+        "HD (720p)",
+        "H.264 Encoded",
+        "Standard Quality"
+      ]
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-12T04:34:10.186102+00:00",
+    "action": "PIPELINE_COMPLETE",
+    "details": {
+      "movie_id": "f171b3c0"
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-12T04:34:50.040345+00:00",
+    "action": "PLAYBACK_AUTH",
+    "details": {
+      "theatre_id": "THEATRE_001",
+      "time_remaining_min": 179
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-27T06:25:34.196453+00:00",
+    "action": "UPLOAD",
+    "details": {
+      "movie_id": "dfd8c455",
+      "filename": "cinemashield_working.mp4",
+      "theatre_id": "THEATRE_001"
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-27T06:26:03.352643+00:00",
+    "action": "SHARD",
+    "details": {
+      "movie_id": "dfd8c455",
+      "shards": 4
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-27T06:26:04.116644+00:00",
+    "action": "ENCRYPT",
+    "details": {
+      "movie_id": "dfd8c455"
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-27T06:26:04.507988+00:00",
+    "action": "MANIFEST",
+    "details": {
+      "movie_id": "dfd8c455",
+      "theatre_id": "THEATRE_001",
+      "shards": 4
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-27T06:26:04.721165+00:00",
+    "action": "AI_ANALYSIS",
+    "details": {
+      "movie_id": "dfd8c455",
+      "quality_score": 63,
+      "tags": [
+        "HD (720p)",
+        "H.264 Encoded",
+        "Stereo Audio",
+        "Hi-Fi Audio",
+        "Good Quality"
+      ]
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-27T06:26:04.765432+00:00",
+    "action": "PIPELINE_COMPLETE",
+    "details": {
+      "movie_id": "dfd8c455"
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-27T06:30:17.737009+00:00",
+    "action": "UPLOAD",
+    "details": {
+      "movie_id": "7d4c182e",
+      "filename": "cinemashield_working.mp4",
+      "theatre_id": "THEATRE_001"
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-27T06:30:18.330513+00:00",
+    "action": "SHARD",
+    "details": {
+      "movie_id": "7d4c182e",
+      "shards": 4
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-27T06:30:20.390146+00:00",
+    "action": "ENCRYPT",
+    "details": {
+      "movie_id": "7d4c182e"
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-27T06:30:21.140386+00:00",
+    "action": "MANIFEST",
+    "details": {
+      "movie_id": "7d4c182e",
+      "theatre_id": "THEATRE_001",
+      "shards": 4
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-27T06:30:21.286167+00:00",
+    "action": "AI_ANALYSIS",
+    "details": {
+      "movie_id": "7d4c182e",
+      "quality_score": 63,
+      "tags": [
+        "HD (720p)",
+        "H.264 Encoded",
+        "Stereo Audio",
+        "Hi-Fi Audio",
+        "Good Quality"
+      ]
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-27T06:30:21.381953+00:00",
+    "action": "PIPELINE_COMPLETE",
+    "details": {
+      "movie_id": "7d4c182e"
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-27T06:30:52.638249+00:00",
+    "action": "UPLOAD",
+    "details": {
+      "movie_id": "1afa4d95",
+      "filename": "unikey_movie_demonstration.mp4",
+      "theatre_id": "THEATRE_001"
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-27T06:30:54.496340+00:00",
+    "action": "SHARD",
+    "details": {
+      "movie_id": "1afa4d95",
+      "shards": 4
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-27T06:31:04.698475+00:00",
+    "action": "ENCRYPT",
+    "details": {
+      "movie_id": "1afa4d95"
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-27T06:31:07.242509+00:00",
+    "action": "MANIFEST",
+    "details": {
+      "movie_id": "1afa4d95",
+      "theatre_id": "THEATRE_001",
+      "shards": 4
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-27T06:31:07.398039+00:00",
+    "action": "AI_ANALYSIS",
+    "details": {
+      "movie_id": "1afa4d95",
+      "quality_score": 66,
+      "tags": [
+        "HD (720p)",
+        "H.264 Encoded",
+        "Stereo Audio",
+        "Hi-Fi Audio",
+        "Clip",
+        "Good Quality"
+      ]
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-27T06:31:07.581652+00:00",
+    "action": "PIPELINE_COMPLETE",
+    "details": {
+      "movie_id": "1afa4d95"
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-27T06:35:36.246372+00:00",
+    "action": "UPLOAD",
+    "details": {
+      "movie_id": "8480faa8",
+      "filename": "unikey_movie_demonstration.mp4",
+      "theatre_id": "THEATRE_001"
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-27T06:35:37.409236+00:00",
+    "action": "SHARD",
+    "details": {
+      "movie_id": "8480faa8",
+      "shards": 12
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-27T06:35:49.487575+00:00",
+    "action": "ENCRYPT",
+    "details": {
+      "movie_id": "8480faa8"
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-27T06:35:52.752331+00:00",
+    "action": "MANIFEST",
+    "details": {
+      "movie_id": "8480faa8",
+      "theatre_id": "THEATRE_001",
+      "shards": 12
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-27T06:35:52.941730+00:00",
+    "action": "AI_ANALYSIS",
+    "details": {
+      "movie_id": "8480faa8",
+      "quality_score": 66,
+      "tags": [
+        "HD (720p)",
+        "H.264 Encoded",
+        "Stereo Audio",
+        "Hi-Fi Audio",
+        "Clip",
+        "Good Quality"
+      ]
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-27T06:35:53.095179+00:00",
+    "action": "PIPELINE_COMPLETE",
+    "details": {
+      "movie_id": "8480faa8"
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-27T06:41:35.325726+00:00",
+    "action": "UPLOAD",
+    "details": {
+      "movie_id": "63c97b14",
+      "filename": "unikey_movie_demonstration.mp4",
+      "theatre_id": "THEATRE_001"
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-27T06:41:37.127679+00:00",
+    "action": "SHARD",
+    "details": {
+      "movie_id": "63c97b14",
+      "shards": 31
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-27T06:41:48.406718+00:00",
+    "action": "ENCRYPT",
+    "details": {
+      "movie_id": "63c97b14"
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-27T06:41:53.769598+00:00",
+    "action": "MANIFEST",
+    "details": {
+      "movie_id": "63c97b14",
+      "theatre_id": "THEATRE_001",
+      "shards": 31
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-27T06:41:53.905631+00:00",
+    "action": "AI_ANALYSIS",
+    "details": {
+      "movie_id": "63c97b14",
+      "quality_score": 66,
+      "tags": [
+        "HD (720p)",
+        "H.264 Encoded",
+        "Stereo Audio",
+        "Hi-Fi Audio",
+        "Clip",
+        "Good Quality"
+      ]
+    },
+    "ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-02-27T06:41:54.037500+00:00",
+    "action": "PIPELINE_COMPLETE",
+    "details": {
+      "movie_id": "63c97b14"
+    },
+    "ip": "127.0.0.1"
+  }
+]
